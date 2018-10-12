@@ -1,0 +1,39 @@
+/* =====style===== */
+
+/* 
+DEFINING CSS VAR
+:root{
+    --base: #ffc600;
+    --spacing: 10px;
+    --blur: 0px;
+  }
+
+CALLING CSS VAR
+  img{
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+  } */
+
+:root{
+    --purple: rgb(140, 23, 225);
+    --yellow: rgb(248, 166, 31);
+}
+body{
+    background-color: white;
+    /* margin: 0; */
+}
+
+nav{
+    display: flex;
+    background-color: var(--yellow);
+    font-size: 1.5em;
+}
+
+nav div{
+    padding: 10px;
+}
+
+.page{
+    margin-right: auto;
+}
