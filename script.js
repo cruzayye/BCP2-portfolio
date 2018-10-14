@@ -110,9 +110,12 @@ Project.prototype.displayInfo = function () {
 
 // cocktailPage.displayInfo();
 // busMall.displayInfo();
+cookieStand.displayInfo();
+
 var busMallLink = document.getElementById('busmall');
 busMallLink.addEventListener('click', busMall.displayInfo);
 
 var cocktailLink = document.getElementById('busmall');
 cocktail.addEventListener('click', cocktailPage.displayInfo);
+
 
