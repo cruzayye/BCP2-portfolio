@@ -9,138 +9,110 @@ function Project(name, description, challenges, takeAways, imgLink) {
 }
 var cocktailPage = new Project(
     'cocktail app',
-    'We all get tired of the same old basic mix and some of us arent to saavy to know what to mix. app helps you out by taking what you already have in your fridge and gives you ideas on new drinks you can make using what you already have at home!',
-    '1.Communication was crucial, learning how to talk code. 2.Code would often break after we pushed and made a pull request. 3.researching how to go about functions I was in charge of and browsing through the hundreds of methods.',
-    '1.You cannot build a beautiful website without any thought out prototypes. 2. pay close attention to code when reviewing pull request and make sure not to delete anything important. 3.Be clear on who\'s doing what within your team'
+    //description
+    'We all get tired of the same old basic mix and some of us aren\'t to saavy to know what to mix. app helps you out by taking what you already have in your fridge and gives you ideas on new drinks you can make using what you already have at home!',
+    //challenges
+    ['1.Communication was crucial', '2.Code would often break after we pushed and made a pull request.', '3.researching how to go about functions I was in charge of and browsing through the hundreds of methods.' ],
+    //takeAways
+    ['1.You cannot build a beautiful website without any thought out prototypes.', '2. pay close attention to code when reviewing pull request and make sure not to delete anything important.', '3.Be clear on who\'s doing what within your team' ],
+    
+);
 
-
-
+var busMall = new Project(
+    'Bus Mall',
+    //description
+    'Data analysis app that determines which pictures are most appealing to the viewer. User has to click on 1 of 3 images 15 times, which will then populate a chart of which images were the most popular.',
+    //challenges
+    ['1.Tring to figure out method of displaying 3 images at a time, without displaying the same image more than once in an instance', '2.Figuring out the math to Display a progress bar so that the user knows how many more clicks.', '3.Linking the chart like any other sytle page or script page would be easy, but the script for Bus Mall had to be tweaked in order for numbers and names of images to display properly.' ],
+    //takeAways
+    ['1.First time tapping into local storage and using JSON.', '2.First time using a library to populate the chart.(https://canvasjs.com/)', '3.Tapped into css transitions in order to enhance the feel of the website.' ],
+    
 );
 
 
-Project.prototype.header = function () {
+var cookieStand = new Project(
+    'Cookie Stand Store',
+    //description
+    'This websites displays data for a small business running a cookie store in 6 different locations. That data persist store names, open hours and avg sale per hour.',
+    //challenges
+    ['1.Needed to figure out an algorithm which took a minimum number, maximum number and and average number of cookies in order to come up with a new number of cookies sold per hour whenvever the page is refreshed.', '2.Tables are already complex enough, figuring out how to use the DOM in order to display information with a table is another story.', '3.Provided a form for the store owner to add another store and input numbers that would populate a new table for them.' ],
+    //takeAways
+    ['1.Style guides ar an essential medium of displaying how someone else should understnad your css.', '2.DOM manipulation is how we can take websites to the next level displaying data, elements and pretty much anything that isn\'t static', '3.Tapped into css transitions in order to enhance the feel of the website.' ],
+    
+);
+
+var quiz = new Project(
+    'Pop Quiz',
+    //description
+    'Developed and interactive quiz, which keeps track of total number of questions the user gets right.',
+    //challenges
+    ['1.How to keep track of the user score.', '2.Displaying different responses for the user depending on their answer', '3.This was my first time using a form instead of just an alert to accept user inputted information.' ],
+    //takeAways
+    ['1.InnerHTML > innerText is preffered due to security measures.', '2. The if else statemen comes in handy when providing different avenues to the script.', '3.isNaN stands for is not a number and can be used to tell the user that they can only input a number.' ],
+    
+);
+
+
+
+
+Project.prototype.displayInfo = function () {
     //name
-    var navHeader = document.getElementById('header');
-    navHeader.innerHTML = this.name;
+    // var navHeader = document.getElementById('header');
+    // navHeader.innerHTML = this.name;
+    // navHeader.className = "projectname";
     //description ( can only hav div1appendchchildh2 when its at the bottom but i want it to be the first child of div1 )
-    var section = document.getElementById('body');
+    var section = document.getElementById('content');
     var div1 = document.createElement('div');
     var h2Description = document.createElement('h2');
     var pDescription = document.createElement('p');
     section.appendChild(div1);
     div1.appendChild(h2Description);
     div1.appendChild(pDescription);
-    h2Description.innerHTML = "DESCRIPTIONS";
+    h2Description.innerHTML = "DESCRIPTIONS:";
     pDescription.innerHTML = this.description;
 
     // challenges 
     var div2 = document.createElement('div');
     var h2Challenges = document.createElement('h2');
-    var pChallenges = document.createElement('p');
+    var ulChallenges = document.createElement('ul');
+    var liChallenges = document.createElement('li');
     section.appendChild(div2);
     div2.appendChild(h2Challenges);
-    div2.appendChild(pChallenges);
-    h2Challenges.innerHTML = "CHALLENGES";
-    pChallenges.innerHTML = this.challenges;
+    div2.appendChild(ulChallenges);
+    
+    h2Challenges.innerHTML = "CHALLENGES:";
+    for( var i = 0; i < this.challenges.length; i++){
+        var liChallenges = document.createElement('li');
+        liChallenges.innerText = this.challenges[i];
+        ulChallenges.appendChild(liChallenges);
+
+    }
 
     // takeaways
     var div3 = document.createElement('div');
     var h2Takeaways = document.createElement('h2');
-    var pTakeaways = document.createElement('p');
+    var ulTakeaways = document.createElement('ul');
+    var liTakeAways = document.createElement('li');
     section.appendChild(div3);
-    div2.appendChild(h2Takeaways);
-    div2.appendChild(pTakeaways);
-    h2Takeaways.innerHTML = "TAKEAWAYS";
-    pTakeaways.innerHTML = this.takeAways;
+    div3.appendChild(h2Takeaways);
+    div3.appendChild(ulTakeaways);
+    h2Takeaways.innerHTML = "TAKE AWAYS:";
+    for( var ta = 0; ta < this.takeAways.length; ta++){
+        var liTakeAways = document.createElement('li');
+        liTakeAways.innerText = this.takeAways[ta];
+        ulTakeaways.appendChild(liTakeAways);
 
+    }
     //img
     
 
 };
 
-cocktailPage.header()
+// cocktailPage.displayInfo();
+// busMall.displayInfo();
+var busMallLink = document.getElementById('busmall');
+busMallLink.addEventListener('click', busMall.displayInfo);
 
-
-
-// var cocktailsPage = {
-//     name: 'cocktail app',
-//     description: 'We all get tired of the same old basic mix and some of us arent to saavy to know what to mix. app helps you out by taking what you already have in your fridge and gives you ideas on new drinks you can make using what you already have at home!',
-//     takeAways: '1: worked in a group with two other people. 2.learned how to incorporate new methods such as .sort() and match()',
-//     header: function(){
-//         var navHeader = document.getElementById('header');
-//         navHeader.innerHTML= this.name;
-//     },
-//     //create a dive with class or id from the key 
-//     descriptionDiv: function(){
-//         var section = document.getElementById('body');
-//         var div1 = document.createElement('div');
-//         section.appendChild(div1);
-//         div1.innerHTML= this.description;
-
-//     }
-
-
-// }
-
-// ========need a prototype function for each  key/value =====
-
-// https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes
-
-// console.log(cocktailsPage.description);
-
-// cocktailsPage.header();
-// cocktailsPage.descriptionDiv();
-
-
-
-
-
-// ========
-
-// var pioneer ={
-//     minCust: 17,
-//     maxCust: 88,
-//     avgSale: 5.2,
-//     totalCookies: 0,
-//     openHours: [ '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm' ],
-
-//     header: function(table){
-//       var row = document.createElement("tr");
-//       var heading = document.createElement("th");
-//       heading.setAttribute("colspan", "2");
-//       heading.innerText= "Pioneer place";
-//       row.appendChild(heading);
-//       table.appendChild(row);
-
-//     },
-//     tableHours: function(table){
-//       for( i = 0; i < pioneer.openHours.length; i++){
-//         var row = document.createElement("tr");
-//         var hour = document.createElement("td");
-//         table.appendChild(row);
-//         hour.innerText= pioneer.openHours[i];
-//         row.appendChild(hour);
-//         //cookies per hour
-//         var cookiesPerHour  = randomGenerator(pioneer.minCust, pioneer.maxCust, pioneer.avgSale);
-//         pioneer.totalCookies += cookiesPerHour;
-//         var totalCookies = document.createElement("td");
-//         totalCookies.innerText = cookiesPerHour;
-//         row.appendChild(totalCookies);
-//       }
-//     },
-
-// =========constructor with prototype======
-// function Person(first, last, age, gender, interests) {
-
-//     // property and method definitions
-
-//   }
-
-//   var person1 = new Person('Tammi', 'Smith', 32, 'neutral', ['music', 'skiing', 'kickboxing']);
-
-//   Person.prototype.farewell = function() {
-//     alert(this.name.first + ' has left the building. Bye for now!');
-//   };
-
-//   person1.farewell();
+var cocktailLink = document.getElementById('busmall');
+cocktail.addEventListener('click', cocktailPage.displayInfo);
 

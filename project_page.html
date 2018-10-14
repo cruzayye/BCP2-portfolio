@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Projects </title>
+    <style>
+        .container{
+            display: grid;
+            width: 100%;
+            /* grid-template-columns: repeat(auto-fill, minmax(200px, 2fr)); */
+            grid-template-columns: 40% 40%;
+            grid-template-rows: 200px 200px;
+            justify-content: center;
+            height: 100vh;
+            
+            
+          
+            
+            grid-gap: 10px;
+
+        }
+        .container div{
+       
+            background: purple;
+        }
+
+       .container div{
+            justify-items: center;
+        }
+
+        #home{
+            height: 100vh;
+            background: white;
+        }
+        #home h3{
+            margin: auto;
+            margin-top: 35vh;
+            width:50%;
+            text-align: center;
+       
+        }
+
+        h4{
+            text-align: center;
+            
+        }
+
+        #home h4:nth-of-type(2){
+            color: purple;
+            position: absolute;
+            bottom: 5%;
+            left: 5%;
+
+
+        }
+        nav{
+            overflow: hidden;
+
+              position: fixed;
+             bottom: 0;
+            width: 100%;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="home">
+        <h3>CODING IS JUST PROBLEM SOLVING IN A DIFFERENT LANGUAGE
+        </h3>
+        <h4>-Wise words from a decent coder.</h4>
+        <h4>A site about Johnny Cruz</h4>
+
+
+    </section>
+
+
+    <!-- =======new section======== -->
+    <nav>
+        <div id="header"></div>
+        <div>Projects</div>
+        <div>about</div>
+        <div>blog</div>
+    </nav>
+
+    <div class="container">
+
+        <div>
+            <h3 id="cocktail">Cocktail App</h3>
+        </div>
+        <div>
+            <h3 id="busmall">Bus Mall</h3>
+        </div>
+        <div>
+            <h3>Cookie Store</h3>
+        </div>
+        <div>
+            <h3>The Quiz</h3>
+        </div>
+
+    </div>
+
+    <section id="content">
+
+    </section>
+
+
+</body>
+<script type="text/javascript" src="script.js"></script>
+
+</html>
+
+<!-- Take aways: 
+1. this is used when referencing a key a key (js)
+
+2. finally understad what prototype does. instead of writing propertyies to all object which would take at least 5-10 for each instance we only need to write it once. I had 30 minutes to use elsewhere!
+
+3. it is not good practice to write text straight into a div without a <p> tag or else you wont be able to add a h1 or any other tags, only below it. 
+
+4. why each individiual project page through js?
+
+-->
