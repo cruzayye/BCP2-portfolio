@@ -61,10 +61,22 @@
             overflow: hidden;
 
               position: fixed;
-             bottom: 0;
+             top: 0;
             width: 100%;
             font-size: 1.2em;
         }
+        nav .icon:nth-child(n+2){
+            display:none;
+            
+        }
+
+@media only screen and (min-width: 700px) {
+         nav .icon:nth-child(n+2){
+            display: inline;
+            
+        }
+}
+        
     </style>
 </head>
 
@@ -82,35 +94,61 @@
 
     <!-- =======new section======== -->
     <nav>
+        <img class ="icon menu" src="svg/menu.svg" alt="Kiwi standing on oval">
+        <img class ="icon" src="svg/github.svg" alt="Kiwi standing on oval">
+        <img class ="icon" src="svg/instagram.svg" alt="Kiwi standing on oval">
+        <img class ="icon" src="svg/linkedin2.svg" alt="Kiwi standing on oval">
+        <img class ="icon" src="svg/twitter.svg" alt="Kiwi standing on oval">
         <div id="header"></div>
         <div>Projects</div>
         <div>about</div>
         <div>blog</div>
     </nav>
 
+    <!-- =======pics of projects======== -->
+
+
     <div class="container">
 
-        <div>
-            <h3 id="cocktail">Cocktail App</h3>
+        <div id="cocktail">
+            <h3 >Cocktail App</h3>
         </div>
-        <div>
-            <h3 id="busmall">Bus Mall</h3>
+        <div id="busmall">
+            <h3 >Bus Mall</h3>
         </div>
-        <div>
+        <div id="cookiestore">
             <h3>Cookie Store</h3>
         </div>
-        <div>
+        <div id="quiz">
             <h3>The Quiz</h3>
         </div>
 
     </div>
 
+    <!-- =======template for js======== -->
+
+
     <section id="content">
+        <h2>Project Name</h2>
+        <div> 
+            <h3>Description</h3>
+            <p id="description"> </p>
+        </div>
+        <div> 
+            <h3>Challenges</h3>
+            <p id = "challenges"> </p>
+        </div>
+        <div> 
+            <h3>Take Aways</h3>
+            <p id = "takeAways"> </p>
+        </div>
+        
 
     </section>
 
 
 </body>
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
 
 </html>
@@ -123,5 +161,7 @@
 3. it is not good practice to write text straight into a div without a <p> tag or else you wont be able to add a h1 or any other tags, only below it. 
 
 4. why each individiual project page through js?
+
+5. whent it comes to event handlers you need your function which takes an event parameter 2. define which node is going to trigger the event 3.addeventlistener to that node. 
 
 -->
