@@ -17,12 +17,30 @@ function Project(rawData) {
 Project.prototype.toHtml = function() {
   //to enter text i can use either of the following!
     // $('#content h3').text(this.name);
-    $('#content').find('h2').text(this.name);
-    $('#description').text(this.description);
-    $('#challenges').text(this.challenges);
-    $('#takeAways').text(this.takeAways);
+
+    var $newTemplate = $('#content').clone();
+    $newTemplate.find('h2').text(this.name);
+    $newTemplate.find('#description').text(this.description);
+    $newTemplate.find('#challenges').text(this.challenges);
+    $newTemplate.find('#takeAways').text(this.takeAways);
+    // $('#takeAways').text(this.takeAways);
+    return $newTemplate;
+    // console.log($newTemplate);
   
   };
+
+// //has to be called after rawData
+// Project.prototype.toHtml = function() {
+//   //to enter text i can use either of the following!
+//     // $('#content h3').text(this.name);
+
+//     var $newTemplate = $('#content').clone();
+//     $('#content').find('h2').text(this.name);
+//     $('#description').text(this.description);
+//     $('#challenges').text(this.challenges);
+//     $('#takeAways').text(this.takeAways);
+  
+//   };
 
 
 //pushing projects to the array in line 2
@@ -30,6 +48,11 @@ rawData.forEach(function(projectObject) {
     projectsArray.push(new Project(projectObject));
     console.log(projectObject);
   });
+
+  projectsArray.forEach(function(project){
+    $('.template').append(project.toHtml());
+  });
+  
 
 
 

@@ -50,9 +50,6 @@ section{
 
 }
 
-section div{
-    border-bottom: 1px solid var(--purple);
-}
 
 #content div{
     margin-top: 4%;
