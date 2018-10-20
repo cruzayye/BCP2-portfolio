@@ -1,6 +1,6 @@
 var rawData = [
     {
-      name:       'cocktial App',
+      name:       'Cocktail App',
       description:    'We all get tired of the same old basic mix and some of us aren\'t to saavy to know what to mix. app helps you out by taking what you already have in your fridge and gives you ideas on new drinks you can make using what you already have at home!',
       challenges:      ['1.Communication was crucial', '2.Code would often break after we pushed and made a pull request.', '3.researching how to go about functions I was in charge of and browsing through the hundreds of methods.'],
       takeAways:   ['1.You cannot build a beautiful website without any thought out prototypes.', '2. pay close attention to code when reviewing pull request and make sure not to delete anything important.', '3.Be clear on who\'s doing what within your team' ],

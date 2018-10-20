@@ -17,12 +17,14 @@ function Project(rawData) {
 Project.prototype.toHtml = function() {
   //to enter text i can use either of the following!
     // $('#content h3').text(this.name);
-
-    var $newTemplate = $('#content').clone();
+    
+    var $newTemplate = $('.template').clone();
+    $newTemplate.removeClass('template'); //how does template stop each object from displaying?
+    $newTemplate.attr('data-project', this.name);// make sure the project pics divs have corresponding data name
     $newTemplate.find('h2').text(this.name);
-    $newTemplate.find('#description').text(this.description);
-    $newTemplate.find('#challenges').text(this.challenges);
-    $newTemplate.find('#takeAways').text(this.takeAways);
+    $newTemplate.find('.description').text(this.description);
+    $newTemplate.find('.challenges').text(this.challenges);
+    $newTemplate.find('.takeAways').text(this.takeAways);
     // $('#takeAways').text(this.takeAways);
     return $newTemplate;
     // console.log($newTemplate);
@@ -49,8 +51,9 @@ rawData.forEach(function(projectObject) {
     console.log(projectObject);
   });
 
+  //for each project in the array we will be appending it as a child within the section with an id of #project details. 
   projectsArray.forEach(function(project){
-    $('.template').append(project.toHtml());
+    $('#project-details').append(project.toHtml());
   });
   
 

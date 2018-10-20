@@ -24,6 +24,10 @@ nav{
 nav div{
     padding: 10px;
 }
+nav img{
+    width: 5%;
+    padding: 1%;
+}
 
 #header{
     margin-right: auto;
