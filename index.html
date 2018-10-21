@@ -5,23 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="sections.css">
-    <link rel="stylesheet" href="project_details.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="projects-page.css">
+    <link href="https://fonts.googleapis.com/css?family=K2D:400,400i|PT+Sans" rel="stylesheet">
+
     <title>Projects </title>
     <style>
+        body{
+            font-family: 'K2D', sans-serif;
+            font-family: 'PT Sans', sans-serif;
+        }
 
 
     </style>
 
     <script id="project-template" type="text/x-handlebars-template">
-    
+
                 <div class="content template" id="project-details" data-project="{{name}}">
-                    <h2>{{name}}</h2>
-                    <h3>Description</h3>
+                    <h1>{{name}}</h1>
+                    <h2>Description</h2>
                     <p class="description"> {{description}} </p>
-                    <h3>Challenges</h3>
+                    <h2>Challenges</h2>
                     <p class = "challenges"> {{challenges}} </p>
-                    <h3>Take Aways</h3>
+                    <h2>Take Aways</h2>
                     <p class = "takeAways"> {{takeAways}}  </p>
                 </div>
         
@@ -29,7 +35,7 @@
     </script>
 
 
-    
+
 </head>
 
 <body>
@@ -47,14 +53,13 @@
     <!-- =======new section======== -->
     <nav>
         <!-- <a href="page.html"><img src="img.png"></a> -->
-
         <img class="icon menu" src="svg/menu.svg" alt="Kiwi standing on oval">
         <img class="icon" src="svg/github.svg" alt="Kiwi standing on oval">
         <img class="icon" src="svg/instagram.svg" alt="Kiwi standing on oval">
         <img class="icon" src="svg/linkedin2.svg" alt="Kiwi standing on oval">
         <img class="icon" src="svg/twitter.svg" alt="twitter image">
         <span id="header"></span>
-        <div class="scroll"><a href="#project-details">Projects</a></div>
+        <div class="scroll"><a href="#projectSection">Projects</a></div>
         <div>about</div>
         <div>blog</div>
     </nav>
@@ -76,7 +81,7 @@
 
     </div>
 
-    <section id ="projectSection">
+    <section id="projectSection">
 
     </section>
 
@@ -99,7 +104,7 @@
 
 
 
-<!--   
+    <!--   
                 <h2>{{name}}</h2>
                 <h3>Description</h3>
                 <p class="description">{{description}} </p>
@@ -115,10 +120,10 @@
 
 </body>
 <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
-    <script type="text/javascript" src="raw_data.js"></script>
-    <script type="text/javascript" src="constructor.js"></script>
-    <script type="text/javascript" src="eventlisteners.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+<script type="text/javascript" src="raw_data.js"></script>
+<script type="text/javascript" src="constructor.js"></script>
+<script type="text/javascript" src="eventlisteners.js"></script>
 
 </html>
 
