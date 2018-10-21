@@ -15,21 +15,32 @@ function Project(rawData) {
 }
 //has to be called after rawData
 Project.prototype.toHtml = function() {
-  //to enter text i can use either of the following!
-    // $('#content h3').text(this.name);
-    
-    var $newTemplate = $('.template').clone();
-    $newTemplate.removeClass('template'); //how does template stop each object from displaying?
-    $newTemplate.attr('data-project', this.name);// make sure the project pics divs have corresponding data name
-    $newTemplate.find('h2').text(this.name);
-    $newTemplate.find('.description').text(this.description);
-    $newTemplate.find('.challenges').text(this.challenges);
-    $newTemplate.find('.takeAways').text(this.takeAways);
-    // $('#takeAways').text(this.takeAways);
-    return $newTemplate;
-    // console.log($newTemplate);
+  var tempFiller = Handlebars.compile( $('#project-template').html() );
+
+  var filledTemplate = tempFiller( this ); //this is referring to?
+
+  return filledTemplate;
+
   
   };
+// ======pevious code incorporting data attr====
+//has to be called after rawData
+// Project.prototype.toHtml = function() {
+//   //to enter text i can use either of the following!
+//     // $('#content h3').text(this.name);
+    
+//     var $newTemplate = $('.template').clone();
+//     $newTemplate.removeClass('template'); //how does template stop each object from displaying?
+//     $newTemplate.attr('data-project', this.name);// make sure the project pics divs have corresponding data name
+//     $newTemplate.find('h2').text(this.name);
+//     $newTemplate.find('.description').text(this.description);
+//     $newTemplate.find('.challenges').text(this.challenges);
+//     $newTemplate.find('.takeAways').text(this.takeAways);
+//     // $('#takeAways').text(this.takeAways);
+//     return $newTemplate;
+//     // console.log($newTemplate);
+  
+//   };
 
 // //has to be called after rawData
 // Project.prototype.toHtml = function() {
@@ -48,12 +59,12 @@ Project.prototype.toHtml = function() {
 //pushing projects to the array in line 2
 rawData.forEach(function(projectObject) {
     projectsArray.push(new Project(projectObject));
-    console.log(projectObject);
+    // console.log(projectObject);
   });
 
   //for each project in the array we will be appending it as a child within the section with an id of #project details. 
   projectsArray.forEach(function(project){
-    $('#project-details').append(project.toHtml());
+    $('#projectSection').append(project.toHtml());
   });
   
 

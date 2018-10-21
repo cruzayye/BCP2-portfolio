@@ -1,9 +1,13 @@
 $("#project-list").on('click', 'div', function() {
-  $('.content').hide();
-  $("#project-details").css("display", "block");
+  // $('#project-details').hide();//hides the previous content.
+  $("#project-details").css("display", "block");// project is originally set to display: none;
 
-  var data = $(this).data('project');
+  var data = $(this).data('project');//takes the value of the div ex: data-project = "Bus Mall"
   $('#project-details [data-project="' + data + '"]').show();
+
+
+
+
 });
 
 
