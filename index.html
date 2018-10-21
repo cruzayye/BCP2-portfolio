@@ -5,13 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="sections.css">
-    <link rel="stylesheet" href="project_details.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="projects-page.css">
+    <link href="https://fonts.googleapis.com/css?family=K2D:400,400i|PT+Sans" rel="stylesheet">
+
     <title>Projects </title>
     <style>
+        body{
+            font-family: 'K2D', sans-serif;
+            font-family: 'PT Sans', sans-serif;
+        }
 
 
     </style>
+
+    <script id="project-template" type="text/x-handlebars-template">
+
+                <div class="content template" id="project-details" data-project="{{name}}">
+                    <h1>{{name}}</h1>
+                    <h2>Description</h2>
+                    <p class="description"> {{description}} </p>
+                    <h2>Challenges</h2>
+                    <p class = "challenges"> {{challenges}} </p>
+                    <h2>Take Aways</h2>
+                    <p class = "takeAways"> {{takeAways}}  </p>
+                </div>
+        
+
+    </script>
+
+
+
 </head>
 
 <body>
@@ -28,49 +52,42 @@
 
     <!-- =======new section======== -->
     <nav>
-            <!-- <a href="page.html"><img src="img.png"></a> -->
-
+        <!-- <a href="page.html"><img src="img.png"></a> -->
         <img class="icon menu" src="svg/menu.svg" alt="Kiwi standing on oval">
         <img class="icon" src="svg/github.svg" alt="Kiwi standing on oval">
         <img class="icon" src="svg/instagram.svg" alt="Kiwi standing on oval">
         <img class="icon" src="svg/linkedin2.svg" alt="Kiwi standing on oval">
         <img class="icon" src="svg/twitter.svg" alt="twitter image">
         <span id="header"></span>
-        <div class = "scroll"><a href="#project-details">Projects</a></div>
+        <div class="scroll"><a href="#projectSection">Projects</a></div>
         <div>about</div>
         <div>blog</div>
     </nav>
 
-    <!-- =======pics of projects======== -->
-    <!-- 
-    give this an id of so that we can do an on click listener that takes all teh 'div' 
+    <div id="project-list" class="container">
 
-    .container should have a class of  .template which will have css of dislay none.
+        <div id="cocktail" data-project="Cocktail App">
+            <h3>Cocktail App</h3>
+        </div>
+        <div id="busmall" data-project="Bus Mall">
+            <h3>Bus Mall</h3>
+        </div>
+        <div id="cookiestore" data-project="Cookie Store">
+            <h3>Cookie Store</h3>
+        </div>
+        <div id="quiz" data-project="Pop Quiz">
+            <h3>The Quiz</h3>
+        </div>
 
--->
-    <!-- 1.giving .container an #project list...
-    2. data-project="object.name" which references the detials to display the info. 
- -->
- <div id="project-list" class="container">
-
-    <div id="cocktail" data-project="Cocktail App">
-        <h3 >Cocktail App</h3>
-    </div>
-    <div id="busmall" data-project="Bus Mall">
-        <h3 >Bus Mall</h3>
-    </div>
-    <div id="cookiestore" data-project="Cookie Store">
-        <h3>Cookie Store</h3>
-    </div>
-    <div id="quiz" data-project="Pop Quiz">
-        <h3>The Quiz</h3>
     </div>
 
-</div>
+    <section id="projectSection">
+
+    </section>
 
     <!-- =======template for js======== -->
     <!-- 1.giving section #project-details which references... -->
-    <section id="project-details">
+    <!-- <section id="project-details">
         <div class="content template">
             <h2>Project Name</h2>
             <h3>Description</h3>
@@ -80,13 +97,30 @@
             <h3>Take Aways</h3>
             <p class = "takeAways"> </p>
         </div>
-    </section>
+    </section> -->
 
-<!-- figure out the following on your own -->
+    <!-- ============class 04=========== -->
+
+
+
+
+    <!--   
+                <h2>{{name}}</h2>
+                <h3>Description</h3>
+                <p class="description">{{description}} </p>
+                <h3>Challenges</h3>
+                <p class = "challenges">{{challenges}} </p>
+                <h3>Take Aways</h3>
+                <p class = "takeAways">{{takeAways}} </p>
+            </div> -->
+
+
+    <!-- figure out the following on your own -->
 
 
 </body>
 <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
 <script type="text/javascript" src="raw_data.js"></script>
 <script type="text/javascript" src="constructor.js"></script>
 <script type="text/javascript" src="eventlisteners.js"></script>
