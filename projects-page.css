@@ -34,6 +34,11 @@
 
         }
 
+        #projectSection{
+            border: solid 10px yellow;
+            z-index: 10;    
+        }
+
 
 
 
@@ -53,9 +58,14 @@
             background: var(--purple);
             color: white;
             display: none;
-            margin-top: -25%;
+            /* margin-top: -25%; */
             padding: 5%;
 
+
+        }
+
+        #projectSection{
+            display: none;
 
         }
 
