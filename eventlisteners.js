@@ -2,16 +2,9 @@ $("#project-list").on('click', 'div', function() {
   $('#projectSection').children().hide();
   $('#projectSection').css('display', 'block');
 
-  var data = $(this).data('project');//takes the value of the div ex: data-project = "Bus Mall"
+  let data = $(this).data('project');//takes the value of the div ex: data-project = "Bus Mall"
   console.log(data);
   $('[data-project="' + data + '"]').show();
-
-
-  
-
-
-
-
 
 
 });
@@ -20,12 +13,7 @@ $("#project-list").on('click', 'div', function() {
 
 
 
-//  $("#project-list").on('click', 'div', function(){
-//    $('content').hide();//start off by hiding the template
-//    var data = $(this).data('project'); //referencing data attr | ex: data-project ="Cocktail App"
-//    $('#project-details [data-project ="' + data + '"]').show();//within section #project details passing through the data attribute. 
 
-//  });
 
  $(".menu").click(function(){
    $("nav img").toggleClass('icon');

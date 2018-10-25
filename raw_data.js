@@ -1,4 +1,4 @@
-var rawData = [
+const rawData = [
     {
       name:       'Cocktail App',
       description:    'We all get tired of the same old basic mix and some of us aren\'t to saavy to know what to mix. app helps you out by taking what you already have in your fridge and gives you ideas on new drinks you can make using what you already have at home!',
