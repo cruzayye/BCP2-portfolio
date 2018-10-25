@@ -3,12 +3,12 @@
 
 const projectsArray = [];
 
-function Project(rawData) {
-    this.name = rawData.name;
-    this.description = rawData.description;
-    this.challenges = rawData.challenges;
-    this.takeAways = rawData.takeAways;
-    this.imgLink = rawData.imgLink;
+function Project(rawDataObj) {
+    this.name = rawDataObj.name;
+    this.description = rawDataObj.description;
+    this.challenges = rawDataObj.challenges;
+    this.takeAways = rawDataObj.takeAways;
+    this.imgLink = rawDataObj.imgLink;
 
 }
 //has to be called after rawData
@@ -18,18 +18,55 @@ Project.prototype.toHtml = function() {
   var filledTemplate = tempFiller( this ); //this is referring to?
 
   return filledTemplate;
-
   
   };
 
-rawData.forEach(function(rawData) {
-    projectsArray.push(new Project(rawData));
-  });
 
-  //for each project in the array we will be appending it as a child within the section with an id of #project details. 
-  projectsArray.forEach(function(project){
-    $('#projectSection').append(project.toHtml());
-  });
+
+// ==============json actions start here======
+
+  projectsArray.loadAll = function(rawData) {
+
+    rawData.forEach(function(element) {
+      projectsArray.push(new Project(element));
+    })
+  }
+
+projectsArray.fetchAll = function() {
+  if (localStorage.rawData) {
+
+    projectsArray.loadAll(JSON.parse(localStorage.rawData));
+  } else {
+
+    $.get('rawdata.json', showFile);
+
+    function showFile(response) {
+      
+    localStorage.setItem("rawData", JSON.stringify(response));
+    projectsArray.loadAll(response); 
+    }
+    
+    }
+  }
+
+
+
+
+
+
+
+
+  // projectsArray.forEach(function(project){
+  //   $('#projectSection').append(project.toHtml());
+  // });
+
+
+
+
+
+
+
+
   
 
 
@@ -37,18 +74,42 @@ rawData.forEach(function(rawData) {
 
 
 
-  
 
 
 
 
 
 
-//   function handlePortfolioClick(event){
-//     busMall.displayInfo();
 
 
-// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
