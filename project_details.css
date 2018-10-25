@@ -48,7 +48,7 @@
             display: none;
 }
     
-        #project-details{
+        .project-details{
             background: var(--purple);
             color: white;
             display: none;

@@ -48,7 +48,7 @@
             display: none;
 }
     
-        #project-details{
+        .project-details{
             color: white;
             display: none;
             /* margin-top: -25%; */
