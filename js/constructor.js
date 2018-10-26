@@ -24,6 +24,7 @@ Project.prototype.toHtml = function() {
 
 
 // ==============json actions start here======
+// why do we call it projectsArray.loadAll instead of just loadAll | Because its a alot more discriptive and we know that we are talking about the projectsArray. 
 
   projectsArray.loadAll = function(rawData) {
 
