@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/projects-page.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=K2D:400,400i|PT+Sans" rel="stylesheet">
 
     <title>Projects </title>
@@ -20,7 +21,6 @@
     </style>
 
     <script id="project-template" type="text/x-handlebars-template">
-
                 <div class="content template project-details"  data-project="{{name}}">
                     <h1>{{name}}</h1>
                     <h2>Description</h2>
@@ -30,8 +30,6 @@
                     <h2>Take Aways</h2>
                     <p class = "takeAways"> {{takeAways}}  </p>
                 </div>
-        
-
     </script>
 
 
@@ -40,7 +38,7 @@
 
 <body>
 
-    <section id="home">
+    <section id="top">
         <h3>CODING IS JUST PROBLEM SOLVING IN A DIFFERENT LANGUAGE
         </h3>
         <h4>-Wise words from a decent coder.</h4>
@@ -52,16 +50,17 @@
 
     <!-- =======new section======== -->
     <nav>
-        <!-- <a href="page.html"><img src="img.png"></a> -->
-        <img class="icon menu" src="svg/menu.svg" alt="Kiwi standing on oval">
-        <img class="icon" src="svg/github.svg" alt="Kiwi standing on oval">
-        <img class="icon" src="svg/instagram.svg" alt="Kiwi standing on oval">
-        <img class="icon" src="svg/linkedin2.svg" alt="Kiwi standing on oval">
-        <img class="icon" src="svg/twitter.svg" alt="twitter image">
-        <span id="header"></span>
-        <div class="scroll"><a href="#projectSection">Projects</a></div>
-        <div>about</div>
-        <div>blog</div>
+        <!-- <i class="fas fa-bars"></i>
+        <a href="https://twitter.com/croozayy"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/cruzayye"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/cruzayye"><i class="fab fa-github"></i></a>
+        <a href="mailto:johnnyc010392@gmail.com"><i class="fas fa-at"></i></a> -->
+        <!-- <span id="header"></span> -->
+       <!-- <i class="fas fa-bars"></i> -->
+       <div><a href="#top">home</a></div>
+        <div ><a href="#cocktail">Projects</a></div>
+        <div><a href="#three">About</a></div>
+        <div><a href="#four">Blog</a></div>
     </nav>
 
     <div id="project-list" class="container">
@@ -95,7 +94,47 @@
 <script type="text/javascript" src="js/constructor.js"></script>
 <script type="text/javascript" src="js/eventlisteners.js"></script>
 <script>
+
+
+
+
+//  ============scroll=======   
 projectsArray.fetchAll();
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 700, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+        //   $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            // $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
 
 </script>
 
