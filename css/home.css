@@ -51,8 +51,10 @@ nav .icon:nth-child(n+2){
 nav{
     display: flex;
     justify-content: center;
+    align-content: center;
     font-size: 1em;
     background-color: var(--purple);
+    padding: 1%;
     
 }
 
@@ -64,6 +66,21 @@ nav div{
 nav img{
     width: 5%;
     padding: 1%;
+}
+
+i {
+    color: grey;
+    align-content: center;
+    margin: auto 0;
+    font-size: 1.5em;
+    
+    
+    
+}
+
+.tab{
+    display: none;
+    
 }
 
 #header{

@@ -17,6 +17,33 @@
             font-family: 'PT Sans', sans-serif;
         }
 
+        #blog{
+            height: 100vh;
+            background: white;
+            position: relative;
+            /* z-index: -1; */
+        }
+
+        h2{
+
+            position: absolute; 
+            
+        }
+
+
+
+    @media only screen and (min-width: 500px) {
+        .fa-bars{
+            display: none;
+        }
+
+        .tab{
+            display:flex;
+        }
+}    
+
+
+
 
     </style>
 
@@ -32,23 +59,9 @@
                 </div>
     </script>
 
-
-
 </head>
 
 <body>
-
-    <section id="top">
-        <h3>CODING IS JUST PROBLEM SOLVING IN A DIFFERENT LANGUAGE
-        </h3>
-        <h4>-Wise words from a decent coder.</h4>
-        <h4>A site about Johnny Cruz</h4>
-
-
-    </section>
-
-
-    <!-- =======new section======== -->
     <nav>
         <!-- <i class="fas fa-bars"></i>
         <a href="https://twitter.com/croozayy"><i class="fab fa-twitter"></i></a>
@@ -56,12 +69,22 @@
         <a href="https://github.com/cruzayye"><i class="fab fa-github"></i></a>
         <a href="mailto:johnnyc010392@gmail.com"><i class="fas fa-at"></i></a> -->
         <!-- <span id="header"></span> -->
-       <!-- <i class="fas fa-bars"></i> -->
-       <div><a href="#top">home</a></div>
-        <div ><a href="#cocktail">Projects</a></div>
-        <div><a href="#three">About</a></div>
-        <div><a href="#four">Blog</a></div>
+       <i class="fas fa-bars"></i>
+       <div class="tab"><a href="#top">home</a></div>
+        <div class="tab"><a href="#cocktail">Projects</a></div>
+        <div class="tab"><a href="#three">About</a></div>
+        <div class="tab"><a href="#blog">Blog</a></div>
     </nav>
+
+    <section id="top">
+        <h3>CODING IS JUST PROBLEM SOLVING IN A DIFFERENT LANGUAGE
+        </h3>
+        <h4>-Wise words from a decent coder.</h4>
+        <h4>A site about Johnny Cruz</h4>
+    </section>
+
+
+    <!-- =======new section======== -->
 
     <div id="project-list" class="container">
 
@@ -81,11 +104,17 @@
     </div>
 
     <!-- ====================HANDLEBAR TEMPLATE GOES HERE===================== -->
-
+    
     <section id="projectSection">
+        
+    </section>
+    
+    <!-- ====================BLOG GOES HERE ===================== -->
+
+    <section id="blog">
+        <h2>BLOG</h2>
 
     </section>
-
 
 </body>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
@@ -93,48 +122,17 @@
 <!-- <script type="text/javascript" src="raw_data.js"></script> -->
 <script type="text/javascript" src="js/constructor.js"></script>
 <script type="text/javascript" src="js/eventlisteners.js"></script>
+<script src="js/scroll.js"> </script>
 <script>
+    $(".fa-bars").on('click', function(){
+        $("nav").find('div').toggleClass("tab");
+        console.log('hey hey hey');
+    })
 
 
 
 
-//  ============scroll=======   
-projectsArray.fetchAll();
-$('a[href*="#"]')
-  // Remove links that don't actually link to anything
-  .not('[href="#"]')
-  .not('[href="#0"]')
-  .click(function(event) {
-    // On-page links
-    if (
-      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-      && 
-      location.hostname == this.hostname
-    ) {
-      // Figure out element to scroll to
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      // Does a scroll target exist?
-      if (target.length) {
-        // Only prevent default if animation is actually gonna happen
-        event.preventDefault();
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 700, function() {
-          // Callback after animation
-          // Must change focus!
-          var $target = $(target);
-        //   $target.focus();
-          if ($target.is(":focus")) { // Checking if the target was focused
-            return false;
-          } else {
-            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-            // $target.focus(); // Set focus again
-          };
-        });
-      }
-    }
-  });
+
 
 </script>
 
