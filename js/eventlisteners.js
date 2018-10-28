@@ -11,7 +11,7 @@ $("#project-list").on('click', 'div', function() {
 
 
 });
-console.log(localStorage.rawData);
+// console.log(localStorage.rawData);
 
 
 

@@ -12,24 +12,52 @@
 
     <title>Projects </title>
     <style>
+
+        /* ============QUESTIONS===========
+        1. set hamburger menu as block element 
+        2 */
         body{
             font-family: 'K2D', sans-serif;
             font-family: 'PT Sans', sans-serif;
         }
 
         #blog{
-            height: 100vh;
             background: white;
-            position: relative;
-            /* z-index: -1; */
+            /* height: 95vh; */
+            padding: 10%;
+
+
         }
 
-        h2{
+        /* #blog */
 
-            position: absolute; 
+        #blog h2{
+            border-top: 2px solid red;
+            padding-top: 2%;
+        }
+        #blog h3{
+            padding-bottom: 2%;
+            border-bottom: 2px solid red;
+        }
+
+
+        #blog h2{
+            font-size: 1.2em;
+            line-height: 1em;
+        }
+
+        #blog h3{
+            font-size: 1em;
+        }
+
+        #blogTemplate{
+            display: none;
             
         }
 
+
+
+  
 
 
     @media only screen and (min-width: 500px) {
@@ -84,26 +112,33 @@
     </section>
 
 
-    <!-- =======new section======== -->
+    <!-- =======PROJECTS======== -->
 
     <div id="project-list" class="container">
 
         <div id="cocktail" data-project="Cocktail App">
+            <img src="images/readyf4web/project_links.jpg">
             <h3>Cocktail App</h3>
         </div>
         <div id="busmall" data-project="Bus Mall">
+         <img src="images/readyf4web/stats.jpg">
+
             <h3>Bus Mall</h3>
         </div>
         <div id="cookiestore" data-project="Cookie Store">
+         <img src="images/readyf4web/fishies.jpg">
+
             <h3>Cookie Store</h3>
         </div>
         <div id="quiz" data-project="Pop Quiz">
+            <img src="images/readyf4web/popQuiz.jpg">
+
             <h3>The Quiz</h3>
         </div>
 
     </div>
 
-    <!-- ====================HANDLEBAR TEMPLATE GOES HERE===================== -->
+    <!-- ====================PORJECT DESCRIPTIONS ===================== -->
     
     <section id="projectSection">
         
@@ -111,10 +146,18 @@
     
     <!-- ====================BLOG GOES HERE ===================== -->
 
-    <section id="blog">
-        <h2>BLOG</h2>
+    <section id="blog" >
+        <h1>Blog</h1>
+        <div class='blogTemplate'>
+        <h2></h2>
+        <h3></h3>
+        <p></p>
+        </div>
+        
 
     </section>
+
+
 
 </body>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
@@ -122,11 +165,11 @@
 <!-- <script type="text/javascript" src="raw_data.js"></script> -->
 <script type="text/javascript" src="js/constructor.js"></script>
 <script type="text/javascript" src="js/eventlisteners.js"></script>
+<script type="text/javascript" src="js/blog.js"></script>
 <script src="js/scroll.js"> </script>
 <script>
     $(".fa-bars").on('click', function(){
         $("nav").find('div').toggleClass("tab");
-        console.log('hey hey hey');
     })
 
 
@@ -147,7 +190,9 @@
 
 4. why each individiual project page through js?
 
-5. whent it comes to event handlers you need your function which takes an event parameter 2. define which node is going to trigger the event 3.addeventlistener to that node. 
+5. whent it comes to event handlers you need your function which takes an  parameter 2. define which node is going to trigger the event 3.addeventlistener to that node. 
+
+6. 
 
 -->
 <!-- push -->
