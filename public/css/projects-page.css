@@ -1,0 +1,91 @@
+
+        
+/* ==============project list display=========== */
+        /* #project-list{
+            display: grid;
+           width: 100%;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            height: 100vh;
+
+            grid-gap: 10px;
+            margin-top: 5%;
+
+        }  */
+        #project-list{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 1em;
+
+            width: 50%;
+            margin: auto;
+            
+
+
+        }
+        #project-list div{
+
+            background: purple;
+        }
+
+        #project-list div{
+            justify-items: center;
+        }
+
+        #project-list img{
+            width: 100%;
+        }
+
+        #top{
+            height: 100vh;
+            background: white;
+        }
+
+
+        h4{
+            text-align: center;
+
+        }
+
+
+
+
+
+        #content:nth-of-type(1){
+            display: none;
+        }
+
+        .content{
+            margin-top: 5%;
+            border-bottom: 1px solid var(--purple);
+            display: none;
+}
+    
+        .project-details{
+            color: white;
+            display: none;
+            /* margin-top: -25%; */
+            padding: 5%;
+
+
+        }
+
+        #projectSection{
+            display: none;
+            background: var(--purple);
+            width: 80%;
+            margin: auto;
+            margin-top: -25%;
+            border: solid 10px rgba(223, 145, 0, 0.3);
+
+
+
+        }
+
+
+
+        /* #project-details > h2, h3, p {
+            width: 75%;
+        } */
+/* push */
+/* another push */
