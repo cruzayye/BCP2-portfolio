@@ -2,7 +2,6 @@
 
 
 const projectsArray = [];
-
 function Project(rawDataObj) {
     this.name = rawDataObj.name;
     this.description = rawDataObj.description;
@@ -30,6 +29,7 @@ Project.prototype.toHtml = function() {
 
     rawData.forEach(function(element) {
       projectsArray.push(new Project(element));
+    
     })
   }
 
@@ -48,7 +48,10 @@ projectsArray.fetchAll = function() {
     }
     
     }
+    // console.log(projectsArray[1]);
   }
+
+
 
 
 
