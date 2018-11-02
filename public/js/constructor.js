@@ -54,15 +54,9 @@ projectsArray.fetchAll = function() {
 
 
 
-
-
-
-
-
-
-  // projectsArray.forEach(function(project){
-  //   $('#projectSection').append(project.toHtml());
-  // });
+projectsArray.forEach(function(project){
+    $('#projectSection').append(project.toHtml());
+  });
 
 
 
