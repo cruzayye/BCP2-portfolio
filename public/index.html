@@ -79,6 +79,8 @@
 
     </style>
 
+    <!-- ==============HANDLEBARS======= -->
+
     <script id="project-template" type="text/x-handlebars-template">
                 <div class="content template project-details"  data-project="{{name}}">
                     <h1>{{name}}</h1>
@@ -90,6 +92,25 @@
                     <p class = "takeAways"> {{takeAways}}  </p>
                 </div>
     </script>
+    <script id="blog-template" type="text/x-handlebars-template">
+                <div class="blogConent blogTemplate blog-details"  data-blog="{{name}}">
+                    <h2>{{topic}} </h2>
+                   
+                    <h2>{{date}} </h2>
+                    <p > {{notes}} </p>
+
+                </div>
+    </script>
+        <!-- <section id="blog" >
+        <h1>Blog</h1>
+        <div class='blogTemplate'>
+        <h2></h2>
+        <h3></h3>
+        <p></p>
+        </div>
+        
+
+    </section> -->
 
 </head>
 
@@ -150,7 +171,10 @@
     
     <!-- ====================BLOG GOES HERE ===================== -->
 
-    <section id="blog" >
+    <section id="blogSection" >
+ 
+    </section>
+    <!-- <section id="blog" >
         <h1>Blog</h1>
         <div class='blogTemplate'>
         <h2></h2>
@@ -159,7 +183,7 @@
         </div>
         
 
-    </section>
+    </section> -->
 
 
 
@@ -168,7 +192,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
 <!-- <script type="text/javascript" src="raw_data.js"></script> -->
 <script type="text/javascript" src="js/constructor.js"></script>
-<!-- <script type="text/javascript" src="js/blog.js"></script> -->
+<script type="text/javascript" src="js/blog.js"></script>
 <script type="text/javascript" src="js/eventlisteners.js"></script>
 <script src="js/scroll.js"> </script>
 <script>

@@ -32,29 +32,47 @@ function Blog(blogInfo) {
 }
 //has to be called after rawData
 Blog.prototype.toHtml = function() {
-    var $newTemplate = $('.blogTemplate').clone();
-    $newTemplate.removeClass('blogTemplate');
-    $('#blog').find('h2').text(this.topic);
-    $('#blog').find('h3').text(this.date);
-    $('#blog').find('p').text(this.notes);
-    // $( "#blog" ).append( "<h2>this.topic</h2>" );
-    console.log(this);
+  var tempFiller = Handlebars.compile( $('#blog-template').html() ); //because Handlebars.compile is a function in itself, we need to give it a variable name to hold it in. 
 
-    return $newTemplate;
+  var filledTemplate = tempFiller( this ); //this is referring to?
+  //this refers to the blog constructor. 
 
-
-
-    
-    
+  return filledTemplate; 
   };
+  
+// Blog.prototype.toHtml = function() {
+//     var $newTemplate = $('.blogTemplate').clone();
+//     $newTemplate.removeClass('blogTemplate');
+//     $('#blog').find('h2').text(this.topic);
+//     $('#blog').find('h3').text(this.date);
+//     $('#blog').find('p').text(this.notes);
+//     // $( "#blog" ).append( "<h2>this.topic</h2>" );
+//     console.log(this);
 
+//     return $newTemplate;
+
+
+
+    
+  
+//pus each new instance of blogInfo into the array. 
   blogInfo.forEach(function(blogobject) {
     blogArray.push(new Blog(blogobject));
   });
 
+//traverse teh dom with everything in the blogArray. 
   blogArray.forEach(function(newBlog){
-    $('#blog').append(newBlog.toHtml());
+    $('#blogSection').append(newBlog.toHtml());
   });
+
+
+
+
+
+
+
+
+
 
 // USING OJBECTS, CONSTRUCTORS AND ARRAYS TO  TO CREATE A TEMPLATE FOR A SITE.
 
