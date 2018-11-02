@@ -25,13 +25,7 @@ Project.prototype.toHtml = function() {
 // ==============json actions start here======
 // why do we call it projectsArray.loadAll instead of just loadAll | Because its a alot more discriptive and we know that we are talking about the projectsArray. 
 
-  projectsArray.loadAll = function(rawData) {
 
-    rawData.forEach(function(element) {
-      projectsArray.push(new Project(element));
-    
-    })
-  }
 
 projectsArray.fetchAll = function() {
   if (localStorage.rawData) {
@@ -43,20 +37,39 @@ projectsArray.fetchAll = function() {
 
     function showFile(response) {
       
-    localStorage.setItem("rawData", JSON.stringify(response));
-    projectsArray.loadAll(response); 
+      localStorage.setItem("rawData", JSON.stringify(response));
+      projectsArray.loadAll(response); 
     }
     
     }
     // console.log(projectsArray[1]);
   }
 
+  projectsArray.loadAll = function(rawData) {
+
+    rawData.forEach(function(element) {
+      projectsArray.push(new Project(element));
+    
+    });
+    appendProjects();
+  }
 
 
 
-projectsArray.forEach(function(project){
+
+function appendProjects() {
+  projectsArray.forEach(function(project){
     $('#projectSection').append(project.toHtml());
   });
+
+};
+
+$(window).on('load', function(){
+  console.log('looaded');
+  projectsArray.fetchAll();
+
+
+})
 
 
 

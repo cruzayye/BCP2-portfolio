@@ -1,5 +1,5 @@
 //  ============scroll=======   
-projectsArray.fetchAll();
+
 $('a[href*="#"]')
   // Remove links that don't actually link to anything
   .not('[href="#"]')
