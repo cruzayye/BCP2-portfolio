@@ -93,11 +93,12 @@
                 </div>
     </script>
     <script id="blog-template" type="text/x-handlebars-template">
-                <div class="blogConent blogTemplate blog-details"  data-blog="{{name}}">
+                
+                <div class="blogContent blogTemplate blog-details"  data-blog="{{topic}}">
                     <h2>{{topic}} </h2>
                    
                     <h2>{{date}} </h2>
-                    <p > {{notes}} </p>
+                    <p class = "notes"> {{notes}} </p>
 
                 </div>
     </script>
@@ -137,25 +138,25 @@
     </section>
 
 
-    <!-- =======PROJECTS======== -->
+    <!-- =======PROJECT lists======== -->
 
     <div id="project-list" class="container">
 
-        <div id="cocktail" data-project="Cocktail App">
+        <div id="cocktail" class="dropShadow" data-project="Cocktail App">
             <img src="images/readyf4web/project_links.jpg">
             <h3>Cocktail App</h3>
         </div>
-        <div id="busmall" data-project="Bus Mall">
+        <div id="busmall" class="dropShadow" data-project="Bus Mall">
          <img src="images/readyf4web/stats.jpg">
 
             <h3>Bus Mall</h3>
         </div>
-        <div id="cookiestore" data-project="Cookie Store">
+        <div id="cookiestore" class="dropShadow" data-project="Cookie Store">
          <img src="images/readyf4web/fishies.jpg">
 
             <h3>Cookie Store</h3>
         </div>
-        <div id="quiz" data-project="Pop Quiz">
+        <div id="quiz" class="dropShadow" data-project="Pop Quiz">
             <img src="images/readyf4web/popQuiz.jpg">
 
             <h3>The Quiz</h3>
@@ -167,23 +168,18 @@
     
     <section id="projectSection">
         
+        
     </section>
     
     <!-- ====================BLOG GOES HERE ===================== -->
-
-    <section id="blogSection" >
- 
-    </section>
-    <!-- <section id="blog" >
-        <h1>Blog</h1>
-        <div class='blogTemplate'>
-        <h2></h2>
-        <h3></h3>
-        <p></p>
+    <section class="blogSpot">
+        <h2>Blogspot</h2>
+        <div id="blogSection" >
+                
+    
         </div>
-        
+    </section>
 
-    </section> -->
 
 
 

@@ -11,19 +11,17 @@ $("#project-list").on('click', 'div', function() {
   //make a loop that goes over the data attr and matches the name of the array in order to display. 
   projectsArray.forEach(function(project) {
     if(project.name == data){
-       $('[data-project="' + data + '"]').show();
-      console.log(project);
-
-      
-    }
-    
-
-
+       $('#projectSection').children('[data-project="' + data + '"]').fadeIn();
+      console.log(project);   
+    }  
   });
-
-
 });
 // console.log(localStorage.rawData);
+
+$(".blogSpot").on('click', 'div', function() {
+    // $(this).children('p').toggleClass('notes');
+    $(this).children('p').slideToggle();
+});
 
 
 

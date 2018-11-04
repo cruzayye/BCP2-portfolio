@@ -12,17 +12,26 @@
             margin-top: 5%;
 
         }  */
+
+        body{
+            background: white;
+        }
         #project-list{
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-gap: 1em;
 
-            width: 50%;
+            width: 90%;
             margin: auto;
+            margin-top: 5%;
+
+           
             
 
 
         }
+
+       
         #project-list div{
 
             background: purple;
@@ -34,6 +43,14 @@
 
         #project-list img{
             width: 100%;
+
+        }
+
+
+
+          .dropShadow:hover, .dropShadow:active{
+            box-shadow: 0px 0px 16px 2px rgba(0,0,0,0.39);
+
         }
 
         #top{
@@ -80,6 +97,20 @@
 
 
 
+        }
+
+        .blogSpot{
+            padding: 10%;
+           
+        }
+
+        .blogContent{
+            border-bottom: white solid 1px;
+            border-top: white solid 1px;
+        }
+
+        .notes{
+            display: none;
         }
 
 
