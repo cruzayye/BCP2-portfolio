@@ -1,6 +1,7 @@
 // ========js======
 
 
+
 const projectsArray = [];
 function Project(rawDataObj) {
     this.name = rawDataObj.name;
@@ -10,6 +11,10 @@ function Project(rawDataObj) {
     this.imgLink = rawDataObj.imgLink;
 
 }
+
+
+
+
 //has to be called after rawData
 Project.prototype.toHtml = function() {
   var tempFiller = Handlebars.compile( $('#project-template').html() );
@@ -19,6 +24,22 @@ Project.prototype.toHtml = function() {
   return filledTemplate;
   
   };
+
+//TODO: loop over the description array to either insert into an li tag or add a break tag at the end.
+// rows.map((articleObj) => new Article(articleObj));
+// Article.all = rows.map(articleObj => new Article(articleObj));
+
+var elements = [
+  'Hydrogen',
+  'Helium',
+  'Lithium',
+  'Beryllium'
+];
+
+
+// elements.map(function(element) { 
+//   return element.length; 
+// }); // [8, 6, 7, 9]
 
 
 
@@ -64,12 +85,50 @@ function appendProjects() {
 
 };
 
+////attempting to loop through projectsArray.takaway and appending a br tag. 
+  // var projectLineBreak = function() {
+  // for(var i=0; i<projectsArray; i++){
+  //   var items = projectsArray[i]
+  // }
+  // return items
+  // };
+
+
+
+
+
+const mapArray = projectArray => {
+  var $challenges = projectArray.challenges;
+  // return challenges.append('<br />');
+  return $challenges;
+    
+}
+
+ 
+
+//append ex. 
+$("#btn2").click(function(){
+  $("ol").append("<li>Appended item</li>");
+});
+
+
 $(window).on('load', function(){
   console.log('looaded');
   projectsArray.fetchAll();
+  console.log(projectsArray.map(mapArray));
+  // console.log(projectLineBreak);
 
-
+  
 })
+
+
+
+
+
+
+// console.log(projectsArray.map(mapArray));
+
+
 
 
 
