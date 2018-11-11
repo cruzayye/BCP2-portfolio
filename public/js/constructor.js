@@ -23,6 +23,7 @@ Project.prototype.toHtml = function() {
 
   return filledTemplate;
   
+  
   };
 
 //TODO: loop over the description array to either insert into an li tag or add a break tag at the end.
@@ -67,8 +68,26 @@ projectsArray.fetchAll = function() {
   }
 
   projectsArray.loadAll = function(rawData) {
+    const addBr = projectArray => {
+      console.log(projectArray);
+      const mappedProject = projectArray.map(project => {
+          
+        const challenges = project.challenges.map(challenge => {
+          
+           return challenge += "<br/>";
+        })
+        project.challenges = challenges; // how is this returning everything??
+        return project;
+         
+       })
+       console.log(mappedProject);
+       return mappedProject;
+     }
 
-    rawData.forEach(function(element) {
+    var formattedChallenges = addBr(rawData);
+    console.log(formattedChallenges);
+
+    formattedChallenges.forEach(function(element) {
       projectsArray.push(new Project(element));
     
     });
@@ -96,13 +115,27 @@ function appendProjects() {
 
 
 
-
-const mapArray = projectArray => {
-  var $challenges = projectArray.challenges;
-  // return challenges.append('<br />');
-  return $challenges;
+// const setTakeAwayList2 = () => {
+//   const $projectslist = projectsArray.map(tAways => {
+//     const $taItems = tAways.takeAways.map(ta => ta.append('<br/>'));
+//     return $taItems;
     
-}
+//   })
+//   r
+
+
+// }
+// const setTakeAwayList = () => {
+//   const $projectsList = projectsArray.map(tAways => {
+//     const $TaItems = tAways.takeAways.map(ta => $('<li>').text(ta));
+//     const $taList = $('<ul>').append($TaItems);
+//     return $('<li>').append($taList);
+
+//   });
+//   $('.takeAways').append($projectsList);
+
+// }
+
 
  
 
@@ -115,8 +148,10 @@ $("#btn2").click(function(){
 $(window).on('load', function(){
   console.log('looaded');
   projectsArray.fetchAll();
-  console.log(projectsArray.map(mapArray));
+  // console.log(projectsArray.map(mapArray));
   // console.log(projectLineBreak);
+
+
 
   
 })
