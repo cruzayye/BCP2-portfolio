@@ -87,7 +87,7 @@
                     <h2>Description</h2>
                     <p class="description"> {{description}} </p>
                     <h2>Challenges</h2>
-                    <p class = "challenges"> {{{challenges}}} </p>
+                    <p class = "challenges"> {{challenges}} </p>
                     <h2>Take Aways</h2>
                     <p class = "takeAways"> {{takeAways}}  </p>
                 </div>
@@ -124,11 +124,13 @@
         <a href="mailto:johnnyc010392@gmail.com"><i class="fas fa-at"></i></a> -->
         <!-- <span id="header"></span> -->
        <i class="fas fa-bars"></i>
-       <div class="tab"><a href="#top">home</a></div>
-        <div class="tab"><a href="#cocktail">Projects</a></div>
-        <div class="tab"><a href="#three">About</a></div>
-        <div class="tab"><a href="#blog">Blog</a></div>
+       <div class="tab"><a href="/">home</a></div>
+        <div class="tab"><a href="/projects">Projects</a></div>
+        <div class="tab"><a href="/blog">Blog</a></div>
+        <!-- <div class="tab"><a href="/about">About</a></div> -->
     </nav>
+
+<main>
 
     <section id="top">
         <h3>CODING IS JUST PROBLEM SOLVING IN A DIFFERENT LANGUAGE
@@ -140,7 +142,7 @@
 
     <!-- =======PROJECT lists======== -->
 
-    <div id="project-list" class="container">
+    <section id="project-list" class="container">
 
         <div id="cocktail" class="dropShadow" data-project="Cocktail App">
             <img src="images/readyf4web/project_links.jpg">
@@ -162,7 +164,7 @@
             <h3>The Quiz</h3>
         </div>
 
-    </div>
+    </section>
 
     <!-- ====================PORJECT DESCRIPTIONS ===================== -->
     
@@ -179,17 +181,25 @@
     
         </div>
     </section>
+</main>
 
 
 
 
 </body>
+<script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+<!-- fake pag.js -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.11.3/page.min.js"></script> -->
+
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
 <!-- <script type="text/javascript" src="raw_data.js"></script> -->
 <script type="text/javascript" src="js/constructor.js"></script>
 <script type="text/javascript" src="js/blog.js"></script>
 <script type="text/javascript" src="js/eventlisteners.js"></script>
+<script type="text/javascript" src="js/project_page.js"></script>
+<script type="text/javascript" src="js/blog_page.js"></script>
+<script type="text/javascript" src="js/routes.js"></script>
 <script src="js/scroll.js"> </script>
 <script>
     $(".fa-bars").on('click', function(){

@@ -68,26 +68,27 @@ projectsArray.fetchAll = function() {
   }
 
   projectsArray.loadAll = function(rawData) {
-    const addBr = projectArray => {
-      console.log(projectArray);
-      const mappedProject = projectArray.map(project => {
+    //USE THIS TO ADD A BR TAG FOR EACH CHALLENGE.
+    // const addBr = projectArray => {
+    //   console.log(projectArray);
+    //   const mappedProject = projectArray.map(project => {
           
-        const challenges = project.challenges.map(challenge => {
+    //     const challenges = project.challenges.map(challenge => {
           
-           return challenge += "<br/>";
-        })
-        project.challenges = challenges; // how is this returning everything??
-        return project;
+    //        return challenge += "<br/>";
+    //     })
+    //     project.challenges = challenges; // how is this returning everything??
+    //     return project;
          
-       })
-       console.log(mappedProject);
-       return mappedProject;
-     }
+    //    })
+    //    console.log(mappedProject);
+    //    return mappedProject;
+    //  }
 
-    var formattedChallenges = addBr(rawData);
-    console.log(formattedChallenges);
+    // var formattedChallenges = addBr(rawData);
+    // console.log(formattedChallenges);
 
-    formattedChallenges.forEach(function(element) {
+    rawData.forEach(function(element) {
       projectsArray.push(new Project(element));
     
     });
