@@ -102,6 +102,22 @@
 
                 </div>
     </script>
+
+    <script id="github-template" type="text/x-handlebars-template">
+        
+          <a href="{{html_url}}" target="_blank">
+            <h3>{{name}}</h3>
+          </a>
+          <p>Description: {{description}}</p>
+          <p>Language: {{language}}</p>
+          <p>Created: {{created_at}}</p>
+          <p>Last updated: {{updated_at}}</p>
+          {{#if watchers_count}}
+            <p>{{watchers_count}} watching this repo</p>
+          {{/if}}
+        
+    </script>
+    
         <!-- <section id="blog" >
         <h1>Blog</h1>
         <div class='blogTemplate'>
@@ -127,6 +143,7 @@
        <div class="tab"><a href="/">home</a></div>
         <div class="tab"><a href="/projects">Projects</a></div>
         <div class="tab"><a href="/blog">Blog</a></div>
+        <div class="tab"><a href="/github">github</a></div>
         <!-- <div class="tab"><a href="/about">About</a></div> -->
     </nav>
 
@@ -177,9 +194,16 @@
     <section class="blogSpot">
         <h2>Blogspot</h2>
         <div id="blogSection" >
-                
-    
+            
+            
         </div>
+    </section>
+    <!-- ====================GIT GOES HERE  ===================== -->
+    
+    <section id="leggo">
+        <h1>why tho?</h1>
+        
+        
     </section>
 </main>
 
@@ -199,6 +223,9 @@
 <script type="text/javascript" src="js/eventlisteners.js"></script>
 <script type="text/javascript" src="js/project_page.js"></script>
 <script type="text/javascript" src="js/blog_page.js"></script>
+<script type="text/javascript" src="js/repo.js"></script>
+<script type="text/javascript" src="js/repoView.js"></script>
+<script type="text/javascript" src="js/githubController.js"></script>
 <script type="text/javascript" src="js/routes.js"></script>
 <script src="js/scroll.js"> </script>
 <script>

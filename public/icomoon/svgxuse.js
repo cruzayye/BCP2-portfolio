@@ -7,7 +7,7 @@
 /*jslint browser: true */
 /*global XDomainRequest, MutationObserver, window */
 (function () {
-    "use strict";
+    "use strict"
     if (typeof window !== "undefined" && window.addEventListener) {
         var cache = Object.create(null); // holds xhr objects to prevent multiple requests
         var checkUseElems;

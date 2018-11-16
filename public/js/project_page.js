@@ -1,4 +1,3 @@
-'use strict'; 
 (function(module) {
   const projectPage = {};
   projectPage.show = () => {
