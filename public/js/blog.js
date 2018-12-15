@@ -2,15 +2,13 @@
 
 var blogInfo = [
     {
-      date:       'october 15th-21st',
-      topic:    'Jquery | Project Management | Handlebars',
+      topic:    'INTRO TO CODE',
       notes:      ['1.JQUERY - With many libraries out there to make Javascript easier, Jquery is a popular library among them all. Long story short it makes life as a JS developer 100 times easier. Instead of creating a var to target an element such as <section>, then creating another var to create an element such as and finally appending to <section> to create inneHTML, this can all be done with one line in JQUERY. This might sound too good to be true but its true. The fact is that Jquery isn\'t implemented by everyone or all employers, it\'s many employers do use other libraries, which means that its important to learn how to work with libraries and know how to read thier documentation.' 
     ],
 },
 
 {
 
-      date:       'october21st -30th',
       topic:    'Jquery | Project Management | Handlebars',
       notes:      ['1.JQUERY - With many libraries out there to make Javascript easier, Jquery is a popular library among them all. Long story short it makes life as a JS developer 100 times easier. Instead of creating a var to target an element such as <section>, then creating another var to create an element such as <h2> and finally appending <h2> to <section> to create inneHTML, this can all be done with one line in JQUERY. This might sound too good to be true but its true. The fact is that Jquery isn\'t implemented by everyone/all employers, it\'s many employers do use other libraries, which means that its important to learn how to work with libraries and know how to read thier documentation.' 
     ],

@@ -1,12 +1,16 @@
 /////////////////blog
 (function(module) {
   const blogPage = {};
+
   blogPage.show = () => {
       $("main > section").hide();
-      $(".blogSpot").show();
+      $(".blogSpot").fadeIn();
+
 
   };
 
 
+
   module.blogPage = blogPage;
 })(window);
+

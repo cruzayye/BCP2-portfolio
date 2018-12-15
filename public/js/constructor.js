@@ -1,5 +1,6 @@
-// ========js======
 
+
+// ============quiz stuff at top
 
 
 const projectsArray = [];
@@ -8,7 +9,7 @@ function Project(rawDataObj) {
     this.description = rawDataObj.description;
     this.challenges = rawDataObj.challenges;
     this.takeAways = rawDataObj.takeAways;
-    this.imgLink = rawDataObj.imgLink;
+    this.link = rawDataObj.link;
 
 }
 
@@ -22,20 +23,11 @@ Project.prototype.toHtml = function() {
   var filledTemplate = tempFiller( this ); //this is referring to?
 
   return filledTemplate;
-  
-  
+   
   };
 
-//TODO: loop over the description array to either insert into an li tag or add a break tag at the end.
-// rows.map((articleObj) => new Article(articleObj));
-// Article.all = rows.map(articleObj => new Article(articleObj));
 
-var elements = [
-  'Hydrogen',
-  'Helium',
-  'Lithium',
-  'Beryllium'
-];
+
 
 
 // elements.map(function(element) { 
@@ -69,24 +61,25 @@ projectsArray.fetchAll = function() {
 
   projectsArray.loadAll = function(rawData) {
     //USE THIS TO ADD A BR TAG FOR EACH CHALLENGE.
-    // const addBr = projectArray => {
-    //   console.log(projectArray);
-    //   const mappedProject = projectArray.map(project => {
-          
-    //     const challenges = project.challenges.map(challenge => {
-          
-    //        return challenge += "<br/>";
-    //     })
-    //     project.challenges = challenges; // how is this returning everything??
-    //     return project;
-         
-    //    })
-    //    console.log(mappedProject);
-    //    return mappedProject;
-    //  }
 
-    // var formattedChallenges = addBr(rawData);
-    // console.log(formattedChallenges);
+    const addLi = projectArray => {
+      console.log(projectArray);
+      const mappedProject = projectArray.map(project => {
+          
+        const challenges = project.challenges.map(challenge => {
+          
+           return `<li> ${challenge} </li>`;
+        })
+        project.challenges = challenges; // how is this returning everything?? | Answer: because we modified the challenges property, here we are saying that the old project.challenges is = to line 70
+        return project;
+         
+       })
+       console.log(mappedProject);
+       return mappedProject;
+     }
+
+    var formattedChallenges = addLi(rawData);
+    console.log(formattedChallenges);
 
     rawData.forEach(function(element) {
       projectsArray.push(new Project(element));
@@ -126,16 +119,6 @@ function appendProjects() {
 
 
 // }
-// const setTakeAwayList = () => {
-//   const $projectsList = projectsArray.map(tAways => {
-//     const $TaItems = tAways.takeAways.map(ta => $('<li>').text(ta));
-//     const $taList = $('<ul>').append($TaItems);
-//     return $('<li>').append($taList);
-
-//   });
-//   $('.takeAways').append($projectsList);
-
-// }
 
 
  
@@ -155,7 +138,7 @@ $(window).on('load', function(){
 
 
   
-})
+});
 
 
 
@@ -163,6 +146,84 @@ $(window).on('load', function(){
 
 
 // console.log(projectsArray.map(mapArray));
+
+    //USE THIS TO ADD A BR TAG FOR EACH CHALLENGE.
+    // const addBr = projectArray => {
+    //   console.log(projectArray);
+    //   const mappedProject = projectArray.map(project => {
+          
+    //     const challenges = project.challenges.map(challenge => {
+          
+    //        return challenge += "<br/>";
+    //     })
+    //     project.challenges = challenges; // how is this returning everything??
+    //     return project;
+         
+    //    })
+    //    console.log(mappedProject);
+    //    return mappedProject;
+    //  }
+
+    // var formattedChallenges = addBr(rawData);
+    // console.log(formattedChallenges);
+
+
+
+    //////////////////////////// line 66
+
+    // const addBr = projectArray => {
+    //   console.log(projectArray);
+    //   const mappedProject = projectArray.map(project => {
+          
+    //     const challenges = project.challenges.map(challenge => {
+          
+    //        return `<li> ${challenge} </li>`;
+    //     })
+    //     project.challenges = challenges; // how is this returning everything?? | Answer: because we modified the challenges property, here we are saying that the old project.challenges is = to line 70
+    //     return project;
+         
+    //    })
+    //    console.log(mappedProject);
+    //    return mappedProject;
+    //  }
+
+    // projectsArray.forEach(function(project){
+    //   $('#projectSection').append(project.toHtml());
+    // });
+  
+
+
+    // const addLi = projectArray => {
+    //   console.log(projectArray);
+    //   projectArray.forEach(function(challenge){
+    //     const challengObj = challenge.challenge;
+    //     return `<li> ${challengObj} </li>`;
+
+        
+
+    //   })
+
+
+
+
+
+    //   const mappedProject = projectArray.map(project => {
+          
+    //     const challenges = project.challenges.map(challenge => {
+          
+    //        return `<li> ${challenge} </li>`;
+    //     })
+    //     project.challenges = challenges; // how is this returning everything?? | Answer: because we modified the challenges property, here we are saying that the old project.challenges is = to line 70
+    //     return project;
+         
+    //    })
+    //    console.log(mappedProject);
+    //    return mappedProject;
+    //  }
+
+
+
+
 
 
 

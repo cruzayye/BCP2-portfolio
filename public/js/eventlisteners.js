@@ -12,10 +12,41 @@ $("#project-list").on('click', 'div', function() {
   projectsArray.forEach(function(project) {
     if(project.name == data){
        $('#projectSection').children('[data-project="' + data + '"]').fadeIn();
-      console.log(project);   
+      console.log(project);  
+      // $('#projectSection').focus();
+
+
+      
     }  
   });
 });
+
+const setTakeAwayList = () => {
+  const $projectsList = projectsArray.map(tAways => {
+    const $TaItems = tAways.takeAways.map(ta => $('<li>').text(ta));
+    const $taList = $('<ul>').append($TaItems);
+    return $('<li>').append($taList);
+
+  });
+  $('.takeAways').append($projectsList);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // console.log(localStorage.rawData);
 
 $(".blogSpot").on('click', 'div', function() {

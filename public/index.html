@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -72,6 +73,12 @@
         .tab{
             display:flex;
         }
+
+        nav{
+            justify-content: left;
+            
+
+        }
 }    
 
 
@@ -84,12 +91,25 @@
     <script id="project-template" type="text/x-handlebars-template">
                 <div class="content template project-details"  data-project="{{name}}">
                     <h1>{{name}}</h1>
+                    <a href="{{link}}">
+                        <h3> go to site/repo</h3>
+                    </a>
+
                     <h2>Description</h2>
                     <p class="description"> {{description}} </p>
                     <h2>Challenges</h2>
-                    <p class = "challenges"> {{challenges}} </p>
+                    <!-- This method integrates the map method we created to set items as li's; before this we were getting unwanted commas -->
+                    <ul class = "challenges"> {{#each challenges}} 
+                        {{{this}}}
+                        {{/each}}
+                    </ul>
                     <h2>Take Aways</h2>
-                    <p class = "takeAways"> {{takeAways}}  </p>
+                    <!-- this method does a foreaach on each takeAway and puts it in an li -->
+                    <ul class = "takeAways"> {{#each takeAways}} 
+                       <li> {{this}}</li>
+                        {{/each}}
+
+                    </ul>  
                 </div>
     </script>
     <script id="blog-template" type="text/x-handlebars-template">
@@ -140,7 +160,7 @@
         <a href="mailto:johnnyc010392@gmail.com"><i class="fas fa-at"></i></a> -->
         <!-- <span id="header"></span> -->
        <i class="fas fa-bars"></i>
-       <div class="tab"><a href="/">home</a></div>
+       <div class="tab"><a href="/home">home</a></div>
         <div class="tab"><a href="/projects">Projects</a></div>
         <div class="tab"><a href="/blog">Blog</a></div>
         <div class="tab"><a href="/github">github</a></div>
@@ -150,41 +170,53 @@
 <main>
 
     <section id="top">
+        <article id="quote">
         <h3>CODING IS JUST PROBLEM SOLVING IN A DIFFERENT LANGUAGE
         </h3>
         <h4>-Wise words from a decent coder.</h4>
-        <h4>A site about Johnny Cruz</h4>
+        </article>
+        <!-- <h4>A site about Johnny Cruz</h4> -->
     </section>
 
 
     <!-- =======PROJECT lists======== -->
 
     <section id="project-list" class="container">
-
-        <div id="cocktail" class="dropShadow" data-project="Cocktail App">
-            <img src="images/readyf4web/project_links.jpg">
+       
+         <div id="cocktail" class="dropShadow" data-project="Cocktail App">
+        <a href="#scrollToProject">
+            <!-- <img src="images/bw/cocktails.jpg"> -->
             <h3>Cocktail App</h3>
+        </a>
         </div>
+        
         <div id="busmall" class="dropShadow" data-project="Bus Mall">
-         <img src="images/readyf4web/stats.jpg">
-
+        <a href="#scrollToProject">
+            <!-- <img src="images/bw/bus_mall.jpg"> -->
+            
             <h3>Bus Mall</h3>
-        </div>
-        <div id="cookiestore" class="dropShadow" data-project="Cookie Store">
-         <img src="images/readyf4web/fishies.jpg">
-
+        </a>
+    </div>
+    <div id="cookiestore" class="dropShadow" data-project="Cookie Store">
+        <a href="#scrollToProject">
+            <!-- <img src="images/bw/cookies.jpg"> -->
+            
             <h3>Cookie Store</h3>
-        </div>
-        <div id="quiz" class="dropShadow" data-project="Pop Quiz">
-            <img src="images/readyf4web/popQuiz.jpg">
+        </a>
+    </div>
+    <div id="quiz" class="dropShadow" data-project="Pop Quiz">
+         <a href="#scrollToProject">
+            <!-- <img src="images/bw/test.jpg"> -->
 
             <h3>The Quiz</h3>
+        </a>
         </div>
+  
 
     </section>
 
     <!-- ====================PORJECT DESCRIPTIONS ===================== -->
-    
+    <span id="scrollToProject"></span>
     <section id="projectSection">
         
         
@@ -192,7 +224,7 @@
     
     <!-- ====================BLOG GOES HERE ===================== -->
     <section class="blogSpot">
-        <h2>Blogspot</h2>
+        <h2 class ="contentTitle">Code Talk </h2>
         <div id="blogSection" >
             
             
@@ -201,7 +233,6 @@
     <!-- ====================GIT GOES HERE  ===================== -->
     
     <section id="leggo">
-        <h1>why tho?</h1>
         
         
     </section>
@@ -221,39 +252,20 @@
 <script type="text/javascript" src="js/constructor.js"></script>
 <script type="text/javascript" src="js/blog.js"></script>
 <script type="text/javascript" src="js/eventlisteners.js"></script>
-<script type="text/javascript" src="js/project_page.js"></script>
-<script type="text/javascript" src="js/blog_page.js"></script>
+<script type="text/javascript" src="js/controllers/home_page.js"></script>
+<script type="text/javascript" src="js/controllers/project_page.js"></script>
+<script type="text/javascript" src="js/controllers/blog_page.js"></script>
 <script type="text/javascript" src="js/repo.js"></script>
 <script type="text/javascript" src="js/repoView.js"></script>
 <script type="text/javascript" src="js/githubController.js"></script>
-<script type="text/javascript" src="js/routes.js"></script>
+<script type="text/javascript" src="js/controllers/routes.js"></script>
 <script src="js/scroll.js"> </script>
 <script>
     $(".fa-bars").on('click', function(){
         $("nav").find('div').toggleClass("tab");
     })
 
-
-
-
-
-
 </script>
 
 </html>
 
-<!-- Take aways: 
-1. this is used when referencing a key (js)
-
-2. finally understad what prototype does. instead of writing propertyies to all object which would take at least 5-10 for each instance we only need to write it once. I had 30 minutes to use elsewhere!
-
-3. it is not good practice to write text straight into a div without a <p> tag or else you wont be able to add a h1 or any other tags, only below it. 
-
-4. why each individiual project page through js?
-
-5. whent it comes to event handlers you need your function which takes an  parameter 2. define which node is going to trigger the event 3.addeventlistener to that node. 
-
-6. 
-
--->
-<!-- push -->

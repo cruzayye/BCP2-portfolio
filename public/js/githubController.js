@@ -3,7 +3,7 @@
 
     githubController.index = () =>{
         $("main > section").hide(); 
-        $('#leggo').show();
+        $('#leggo').fadeIn();
     //    const githubList = github.requestgit(githubView.index);
        github.requestgit(githubView.index);
     //    $(githubList).show();
