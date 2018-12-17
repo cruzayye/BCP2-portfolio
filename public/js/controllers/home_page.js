@@ -2,7 +2,10 @@
 (function(module) {
   const homePage = {};
   homePage.show = () => {
-      $("#top").show();
+      // $("#top").show();
+      
+      $("section:hidden").show();
+      $("#projectSection").hide();
 
   };
 
