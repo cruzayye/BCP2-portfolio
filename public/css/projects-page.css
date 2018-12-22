@@ -260,12 +260,33 @@ li, #content p{
 
         
         }
+
         #quiz{
             background-image: url("../images/bw/test.jpg");
             background-size: cover;
 
         
         }
+        #barberstarrs{
+            background-size: cover;
+            background-position: center;
+            background-image: url("../images/bw/barberstarrs.jpg");
+                 
+        }
+/* 
+        #project-list h3{
+            background-color: black;
+            margin: 0;
+            padding: 5%;
+            
+            
+        } */
+
+
+        
+
+
+        
 
         #project-list div{
             justify-items: center;

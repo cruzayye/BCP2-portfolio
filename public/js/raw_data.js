@@ -27,7 +27,13 @@ const rawData = [
       takeAways:    ['1.InnerHTML > innerText is preffered due to security measures.', '2. The if else statemen comes in handy when providing different avenues to the script.', '3.isNaN stands for is not a number and can be used to tell the user that they can only input a number.' ],
       link: '',
     },
-
+    {
+      name:       'barberstarrs',
+      description:    'This was my very First Freelance job as a web developer.',
+      challenges:   ['1.Since this was my very first freelance project as a web developer I had no idea what to charge so I told my client that if he was pleased with the site he could use it, otherwise he could just disregard it.', '2.Figuring out how to set up a database for the form, instead of just relying on the users email browser.', '3.I had started this project before starting school at alchemy code so a lot of my knowledge was gained online.' ],
+      takeAways:    ['1.Now that I know about css grid I dont think I will ever use bootstrap unless required to.', '2.The HTML in this project contains several divs which is a NO NO!', '3.This project pushed to use SFTP instead of FTP.' ],
+      link: '',
+    }
 
 
 ];

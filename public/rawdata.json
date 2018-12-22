@@ -30,6 +30,15 @@
       "takeAways":    ["InnerHTML > innerText is preferred due to security measures.", " The if else statement  comes in handy when providing different avenues to the script.", "isNaN stands for is not a number and can be used to tell the user that they can only input a number." ],
       "link": "assignemnt2/index.html"
       
+    },
+    {
+      "name":       "barberstarrs",
+      "description":    "This was my very first freelance job as a web developer.",
+      "challenges":   ["Since this was my very first freelance I had no idea what to charge so I told my client that if he was pleased with the site he could use it, otherwise he could just disregard it. I didn't think this would go through, but everything worked out.", "Figuring out how to set up a database for the form, instead of just relying on the users email browser.", "I had started this project before starting school at Alchemy Code Lab, so a lot of my knowledge was gained online." ],
+      "takeAways":    ["Now that I know about css grid I dont think I'll be using Bootstrap unless required to. Theres a lot more freedom and control when creating your own grid.", " The HTML in this project contains several divs which is a NO NO!", "This project pushed to use SFTP instead of FTP when uploading the site to the host. Theres no readson to be using FTP" ],
+      "link": "http://www.barberstarrs.com/"
+      
     }
+    
 
 ]
