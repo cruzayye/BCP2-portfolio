@@ -42,10 +42,7 @@ Project.prototype.toHtml = function() {
 
 
 projectsArray.fetchAll = function() {
-  if (localStorage.rawData) {
 
-    projectsArray.loadAll(JSON.parse(localStorage.rawData));
-  } else {
 
     $.get('rawdata.json', showFile);
 
@@ -57,7 +54,7 @@ projectsArray.fetchAll = function() {
     
     }
     // console.log(projectsArray[1]);
-  }
+  
 
   projectsArray.loadAll = function(rawData) {
     //USE THIS TO ADD A BR TAG FOR EACH CHALLENGE.

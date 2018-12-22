@@ -273,6 +273,12 @@ li, #content p{
             background-image: url("../images/bw/barberstarrs.jpg");
                  
         }
+        #designs{
+            background-size: cover;
+            background-position: center;
+            background-image: url("../images/bw/designs.jpg");
+                 
+        }
 /* 
         #project-list h3{
             background-color: black;

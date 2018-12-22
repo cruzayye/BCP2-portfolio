@@ -38,6 +38,14 @@
       "takeAways":    ["Now that I know about css grid I dont think I'll be using Bootstrap unless required to. Theres a lot more freedom and control when creating your own grid.", " The HTML in this project contains several divs which is a NO NO!", "This project pushed to use SFTP instead of FTP when uploading the site to the host. Theres no readson to be using FTP" ],
       "link": "http://www.barberstarrs.com/"
       
+    },
+    {
+      "name":       "designs",
+      "description":    "This is a collection of my graphic design work. I originally went to school for graphic design which got me interested in coding.",
+      "challenges":   ["This was a fast paced course and I was new to this field, like any other program the learning curve took lots of practice.", "Biggest challenge about working with other designers getting on the same page when design style differ heavily.", "One of the courses was an intro to web design which required us to create an online portfolio with html and css. This was my first time looking at code and a lot more technical than the design work we had been used to." ],
+      "takeAways":    ["I have become efficient in the Adobe Creative Cloud including Photoshop, Illustrator, Indesign and After Effects.", "Because of my graphic design experienced I've realized that websites/apps are more than having a functional program. Design plays a major role for the user's experience.", "Whether it's design or programming both have similarities as far as the process goes.  A plan must be initialized in order to avoid issues down the road. " ],
+      "link": "http://www.lacultura.work/"
+      
     }
     
 
