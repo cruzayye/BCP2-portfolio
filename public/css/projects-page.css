@@ -58,10 +58,9 @@ body{
 }
 #top > article{
     background: #220e22;
-    width: 50%;
+    width: 65%;
     margin: auto;
-    padding: 2%;
-    border: 1px solid white;
+    padding: 3%;
     align-content: center;
 }
 
@@ -187,37 +186,23 @@ li, #content p{
 
         #project-list{
             display: grid;
-            /* grid-template-columns: 200px 200px; */
-            grid-template-columns: repeat(auto-fit, 200px);
-            grid-template-rows: 200px 200px;
-
-            /* grid-template-columns: repeat(auto-fit, minmax(20%, 150px));
-            grid-template-rows: repeat(auto-fit, minmax(150px, 150px)); */
-            /* grid-template-columns: repeat(auto-fit, minmax(250px, 2fr)); */
-     
-            grid-auto-rows: 100%;
-            
+            grid-template-columns: repeat(auto-fill, 130px);
+            grid-auto-rows: 130px; 
             grid-gap: 1em;
-
             width: 90%;
             margin: auto;
             margin-top: 5%;
             padding-top: 5%;
-            /* align-items: center; */
             justify-content: center;
-
-           
-            
-
 
         }
 
-        /* #project-list div{
+        .dropShadow h3{
+            font-size: .8em
+        }
 
-            justify-self: center;
-            align-self: center;
-            
-        }  */
+
+
         #project-list div{
             display: grid;
             /* grid-template-columns: 1fr; */
@@ -244,6 +229,7 @@ li, #content p{
         #cocktail{
             background-image: url("../images/bw/cocktails.jpg");
             background-size: cover;
+            background-position: center;
             
             
         
@@ -251,12 +237,14 @@ li, #content p{
         #busmall{
             background-image: url("../images/bw/bus_mall.jpg");
             background-size: cover;
+            background-position: center;
 
         
         }
         #cookiestore{
             background-image: url("../images/bw/cookies.jpg");
             background-size: cover;
+            background-position: center;
 
         
         }
@@ -264,6 +252,8 @@ li, #content p{
         #quiz{
             background-image: url("../images/bw/test.jpg");
             background-size: cover;
+            background-position: center;
+
 
         
         }
@@ -305,9 +295,15 @@ li, #content p{
 
 
 
-          .dropShadow:hover, .dropShadow:active{
-            box-shadow: 0px 0px 16px 2px rgba(0,0,0,0.39);
+          .dropShadow{
+            border: 2px solid var(--whiteish);
+            box-shadow: 0px 0px 10px 2px rgba(240, 185, 240, 0.295);
 
+        }
+          .dropShadow:hover, .dropShadow:active{
+            transition: all;
+            transition-duration: 2s;
+            box-shadow: none;
         }
 
 

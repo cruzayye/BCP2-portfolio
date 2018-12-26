@@ -55,12 +55,22 @@ $(".blogSpot").on('click', 'div', function() {
 });
 
 
-
-
-
  $(".menu").click(function(){
    $("nav img").toggleClass('icon');
  });
+
+ //hamburger
+
+ $(".fa-bars").on('click', function(){
+  $("nav").find('div').slideToggle("tab");
+})
+
+$("nav").on('click', 'div', function() {
+    $('.tab').slideToggle();
+})
+
+
+
 
 
 
