@@ -67,6 +67,11 @@ body{
 #quote {
     margin-top: 50%;
     text-align: center;
+    /* filter: drop-shadow(0 0 0.75rem crimson); */
+    filter: drop-shadow(0 0 0.75rem  rgba(240, 185, 240, 0.295));
+
+    border: solid 1px var(--whiteish);
+
     
 }
 /* #quote h3{
@@ -90,6 +95,7 @@ nav{
      top: 0;
     width: 100%;
     font-size: 1.2em;
+    z-index: 100;
     
 }
 /* nav .icon:nth-child(n+2){
@@ -198,19 +204,25 @@ li, #content p{
         }
 
         .dropShadow h3{
-            font-size: .8em
+            font-size: .8em;
+            color:rgb(240, 185, 240);
         }
 
 
 
-        #project-list div{
+
+
+        #project-list a{
             display: grid;
             /* grid-template-columns: 1fr; */
-            justify-content: center;
-            align-content: center;
+            /* justify-content: center; */
+            align-content: center;;
             
             
         } 
+
+
+
 
         #project-list a {
             text-decoration: none;
@@ -293,6 +305,18 @@ li, #content p{
 
         }
 
+        .dropShadow h3 {
+            background:rgba(146, 143, 143, 0.7);
+            text-align:Center;
+            padding: 1%;
+            position: relative;
+            opacity: 0;
+
+        }
+
+
+
+
 
 
           .dropShadow{
@@ -300,11 +324,13 @@ li, #content p{
             box-shadow: 0px 0px 10px 2px rgba(240, 185, 240, 0.295);
 
         }
-          .dropShadow:hover, .dropShadow:active{
-            transition: all;
-            transition-duration: 2s;
+          .dropShadow:hover > h3 {
+            transition-duration: .7s;
             box-shadow: none;
+            opacity: 1;
+
         }
+
 
 
         h4{
@@ -349,13 +375,29 @@ li, #content p{
 
         }
 
+
         .blogSpot{
-            padding: 10%;
+            padding: 5%;
            
         }
 
         .blogContent{
             border-bottom: white solid 1px;
+        }
+
+        #blogSection p, li {
+            font-size: 1.2em;
+            line-height: 1.3em;
+            color: var(--whiteish)
+        }
+
+        #blogSection a {
+            /* color: var(--whiteish); */
+            color: var(--yellow);
+        }
+
+        #blogSection a:hover {
+            color: rgba(240, 185, 240, 0.295);
         }
 
         .notes{
@@ -374,6 +416,11 @@ li, #content p{
     
     
             }
+
+            /* .blogSpot{
+                padding: 10%;
+               
+            } */
     
           }
 

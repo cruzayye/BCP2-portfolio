@@ -1,5 +1,5 @@
 
-$("#project-list").on('click', 'div', function() {
+$("#project-list").on('click', 'a', function() {
 
   $('#projectSection').children().hide();
 
@@ -49,9 +49,9 @@ const setTakeAwayList = () => {
 
 // console.log(localStorage.rawData);
 
-$(".blogSpot").on('click', 'div', function() {
+$(".blogSpot").on('click', 'aside, div', function() {
     // $(this).children('p').toggleClass('notes');
-    $(this).children('p').slideToggle();
+    $(this).children('p, ol').slideToggle();
 });
 
 
