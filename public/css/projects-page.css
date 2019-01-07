@@ -3,17 +3,22 @@
     color: orange;
 } */
 
+/* .blogLinks{
+    color: purple;
+} */
 
 
 :root{
     --whiteish: #c9c7c7;
     --yellow: rgb(248, 184, 27);
     --purple: #220e22;
+    --lightPurp:rgb(240, 185, 240);
+
 }
 body{
     background-color: #220e22;
     margin: 0;
-    color: var(--yellow);
+    color: var(--whiteish);
     line-height:1.2em;
 
 }
@@ -23,6 +28,8 @@ body{
     border-bottom: 1px solid white;
     padding-bottom: 2%;
     color: var(--whiteish);
+    color: rgb(240, 185, 240);
+
 }
 
 #top h4:nth-of-type(2){
@@ -30,6 +37,7 @@ body{
     position: absolute;
     bottom: 5%;
     left: 5%;
+
 
 
 }
@@ -41,6 +49,7 @@ body{
     /* background-repeat: none; */
     background-size: cover;
     /* background-color: black; */
+    border-bottom: solid white 1px;
 }
 
 /* #top > article{
@@ -111,7 +120,7 @@ nav{
     background-color: #c9c7c7;
     padding: 1%;
     flex-wrap: wrap;
-    
+    text-transform: uppercase;
 }
 
 
@@ -138,6 +147,8 @@ i {
     align-content: center;
     margin: auto 0;
     font-size: 1.5em;
+    width: auto;
+    color: var(--purple)
     
     
     
@@ -164,7 +175,7 @@ nav a:hover{
 } */
 
 #quote h3{
-    border-bottom: 1px white solid;
+    border-bottom: rgb(240, 185, 240) 1px solid;
     padding-bottom: 2%;
     margin-bottom: 2%;
 }
@@ -188,13 +199,22 @@ li, #content p{
 }
 
 
+.container{
+    width: 90%;
+    margin: auto;
+    color:rgb(240, 185, 240);
+    font-size: 2em;
+    padding-bottom: 2%;
+    text-align: center;
+    margin-top: 5%;
 
+}
 
         #project-list{
             display: grid;
             grid-template-columns: repeat(auto-fill, 130px);
             grid-auto-rows: 130px; 
-            grid-gap: 1em;
+            grid-gap: .1em;
             width: 90%;
             margin: auto;
             margin-top: 5%;
@@ -232,6 +252,8 @@ li, #content p{
 
 
         }
+
+
         /* #project-list div{
             
             background: purple;
@@ -363,16 +385,23 @@ li, #content p{
 
         #projectSection{
             display: none;
-            background: var(--purple);
+            /* background: var(--purple); */
             /* background: #c9c7c7; */
             width: 80%;
             margin: auto;
             margin-top: 10%;
-            border: solid 10px white;
+            border: solid 5px var(--lightPurp);
             color: #5e4062;
 
 
 
+        }
+
+        #projectSection a {
+            color: var(--lightPurp);
+        }
+        #projectSection a:hover {
+            color: var(--whiteish);
         }
 
 
@@ -381,19 +410,35 @@ li, #content p{
            
         }
 
+        .blogTitle{
+            color: rgb(252, 232, 252);
+
+        }
+
         .blogContent{
             border-bottom: white solid 1px;
         }
 
-        #blogSection p, li {
+        .notes {
             font-size: 1.2em;
             line-height: 1.3em;
             color: var(--whiteish)
+ 
         }
+
+        .sites li{
+
+            color: var(--whiteish)
+
+        }
+
+
+
+
 
         #blogSection a {
             /* color: var(--whiteish); */
-            color: var(--yellow);
+            color: var(--lightPurp);
         }
 
         #blogSection a:hover {
@@ -406,24 +451,28 @@ li, #content p{
 
 
         @media screen and (min-width: 700px) {
+            .dropShadow h3{
+                font-size: .6em;
+                color:rgb(240, 185, 240);
+            }
             #project-list{
-
-       
-
-    
-               
-                
-    
+                grid-gap: .5em;
     
             }
-
-            /* .blogSpot{
+            .blogSpot{
                 padding: 10%;
                
-            } */
-    
-          }
+            }
 
+        
+            #projectSection{
+                border: solid 5px var(--lightPurp);
+                padding: 1%;
+   
+            }
+    
+
+            
 
 
  
