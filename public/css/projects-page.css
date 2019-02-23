@@ -1,27 +1,4 @@
-/* =====style===== */
-/* *{
-    color: orange;
-} */
 
-/* .blogLinks{
-    color: purple;
-} */
-
-
-:root{
-    --whiteish: #c9c7c7;
-    --yellow: rgb(248, 184, 27);
-    --purple: #220e22;
-    --lightPurp:rgb(240, 185, 240);
-
-}
-body{
-    background-color: #220e22;
-    margin: 0;
-    color: var(--whiteish);
-    line-height:1.2em;
-
-}
 
 .contentTitle{
     font-size: 2em;
@@ -32,25 +9,16 @@ body{
 
 }
 
-#top h4:nth-of-type(2){
-    /* color: purple; */
+/* #top h4:nth-of-type(2){
     position: absolute;
     bottom: 5%;
     left: 5%;
 
 
 
-}
+} */
 
-#top{
-    height: 100vh;
-    background-image: url("../../backgoundv2.jpg");
-    /* background-image: url("../images/code-bg.png"); */
-    /* background-repeat: none; */
-    background-size: cover;
-    /* background-color: black; */
-    border-bottom: solid white 1px;
-}
+
 
 /* #top > article{
     background: #220e22;
@@ -60,30 +28,10 @@ body{
     margin-top: 50%;
     border: 1px solid white;
 } */
-#top{
-    display: flex;
-    flex-wrap: wrap;
-
-}
-#top > article{
-    /* background: #220e22; */
-    width: 65%;
-    margin: auto;
-    padding: 3%;
-    align-content: center;
-    /* border: solid 1px var(--whiteish); */
-
-}
-
-#quote {
-    margin-top: 50%;
-    text-align: center;
-    /* filter: drop-shadow(0 0 0.75rem crimson); */
-    filter: drop-shadow(0 0 0.75rem  rgba(240, 185, 240, 0.295));
 
 
-    
-}
+
+
 /* #quote h3{
     width: 100%;
 }
@@ -92,98 +40,9 @@ body{
 } */
 
 
-#top  {
-    padding: 10px;
-
-}
-
-
-nav{
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    font-size: 1.2em;
-    z-index: 100;
-    
-}
-/* nav .icon:nth-child(n+2){
-    display:none;
-
-} */
-
-nav{
-    display: flex;
-    justify-content: center;
-    /* align-content: center; */
-    font-size: 1em;
-    background-color: #c9c7c7;
-    padding: 1%;
-    flex-wrap: wrap;
-    text-transform: uppercase;
-}
 
 
 
-nav div{
-    padding: 10px;
-}
-nav img{
-    width: 5%;
-    padding: 1%;
-}
-
-nav .fa-bars{
-    width: 100%;
-    text-align: center;
-    color: var(--purple);
-    
-    /* position: fixed;
-    bottom: 10px;
-    right: 10px; */
-
-}
-
-i {
-    color: grey;
-    align-content: center;
-    margin: auto 0;
-    font-size: 1.5em;
-    width: auto;
-    color: var(--purple)
-    
-    
-    
-}
-
-.tab{
-    display: none;
-    
-}
-
-a{
-    text-decoration: none;
-
-
-}
-nav a:hover{
-    color: var(--yellow);
-
-
-
-}
-/* .tab i{
-    color: black;
-} */
-
-#quote h3{
-    border-bottom: rgb(240, 185, 240) 1px solid;
-    padding-bottom: 2%;
-    margin-bottom: 2%;
-}
-#quote h4{
-    margin-top: 0;
-}
 
 #header{
     margin-right: auto;
@@ -380,7 +239,6 @@ li, #content p{
             color: white;
             display: none;
             /* margin-top: -25%; */
-            padding: 5%;
 
 
         }
@@ -389,10 +247,9 @@ li, #content p{
             display: none;
             /* background: var(--purple); */
             /* background: #c9c7c7; */
-            width: 80%;
             margin: auto;
             margin-top: 10%;
-            border: solid 5px var(--lightPurp);
+            /* border: solid 5px var(--lightPurp); */
             color: #5e4062;
 
 
@@ -471,14 +328,62 @@ li, #content p{
                 padding: 10%;
                
             }
+            
+            .row1 {
+                padding-top: 5%;
+                width: 100%;
+                border-top: 1px solid pink;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                justify-content: center;
+                justify-items: center;
+            }
+
+            .row1{
+                align-items: center;
+            }
+
+            .row1 h1 {
+                text-transform: uppercase;
+            }
+
+            .row1 h2 {
+                text-align: center;
+                border-top: 1px solid #c40bce;
+                padding-top: 10%;
+            }
+            
+            #projectSection img {
+                width: 80%;
+            }
+
+            .row2{
+                text-align: left;
+            }
+
+            .projDescription{
+                margin-top: 5%;
+                margin-left: 5%;
+                width: 40%;
+  
+            }
+            /* .projDescription{
+                text-align: center;
+                width: 58%;
+                margin: auto;
+                margin-top: 5%;
+            } */
+
+            .projDescription p{
+                line-height: 1.4em;
+
+            }
+
+
+   
 
         
-            #projectSection{
-                border: solid 5px var(--lightPurp);
-                padding: 1%;
-   
-            }
-    
+
 
             
 

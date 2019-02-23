@@ -1,0 +1,171 @@
+:root{
+  --whiteish: #c9c7c7;
+  --yellow: rgb(248, 184, 27);
+  --purple: #220e22;
+  --lightPurp:rgb(240, 185, 240);
+
+}
+body{
+  background-color: #220e22;
+  margin: 0;
+  color: var(--whiteish);
+  line-height:1.2em;
+
+}
+
+#top{
+  height: 87vh;
+  background-image: url("../../darkBg.png");
+  background-attachment: fixed;
+
+  background-size: cover;
+}
+
+#top{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+#top > article{
+  /* background: #220e22; */
+  width: 65%;
+  margin: auto;
+  padding: 3%;
+  align-content: center;
+  /* border: solid 1px var(--whiteish); */
+
+}
+
+#quote {
+  margin-top: 50%;
+  text-align: center;
+  /* filter: drop-shadow(0 0 0.75rem crimson); */
+  filter: drop-shadow(0 0 0.75rem  rgba(240, 185, 240, 0.295));
+
+
+  
+}
+#quote h3{
+  border-bottom: rgb(240, 185, 240) 1px solid;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
+}
+#top  {
+  padding: 10px;
+
+}
+
+nav{
+  overflow: hidden;
+  width: 100%;
+  /* height: auto; */
+  font-size: 1.2em;
+  z-index: 100;
+  background:black;
+  
+  /* position: -webkit-sticky; */
+  position: sticky;
+  /* position: fixed; */
+  top: 0;
+  
+  
+}
+/* nav .icon:nth-child(n+2){
+  display:none;
+
+} */
+
+nav section{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  /* align-content: center; */
+  font-size: 1em;
+  /* background-color: #c9c7c7; */
+  padding: 1%;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+  color: pink;
+}
+
+nav aside{
+  display: flex;
+  
+}
+
+nav aside{
+  align-self: end;
+}
+
+nav aside:nth-of-type(2){
+ justify-self: end;
+
+}
+
+.fa-bars{
+  margin-top: 2%;
+}
+
+
+
+
+nav div{
+  padding: 0px 10px 0px 10px;
+  
+}
+nav img{
+  width: 5%;
+  padding: 1%;
+}
+
+nav .fa-bars{
+  width: 100%;
+  text-align: center;
+  color: var(--lightPurp);
+  
+  /* position: fixed;
+  bottom: 10px;
+  right: 10px; */
+
+}
+
+
+i {
+  font-size: 1.2em;
+  width: auto;
+  
+  
+  
+}
+
+.tab{
+  display: none;
+  
+}
+
+a{
+  text-decoration: none;
+
+
+}
+nav  a{
+  color: var(--lightPurp);
+
+
+
+}
+nav a:hover, nav .fa-bars:hover{
+  color: #c40bce;
+
+
+
+}
+/* .tab i{
+  color: black;
+} */
+
+
+#quote h4{
+  margin-top: 0;
+}

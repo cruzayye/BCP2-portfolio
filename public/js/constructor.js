@@ -10,7 +10,7 @@ function Project(rawDataObj) {
     this.challenges = rawDataObj.challenges;
     this.takeAways = rawDataObj.takeAways;
     this.link = rawDataObj.link;
-
+    this.image = rawDataObj.image;
 }
 
 
