@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|PT+Serif:400,400i" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/projects-page.css">
+    <link rel="stylesheet" href="css/diagnolPage.css">
+    <link rel="stylesheet" href="css/intro.css">
+    <!-- <link rel="stylesheet" href="css/about.css"> -->
+    <link rel="stylesheet" href="css/about2.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=K2D:400,400i|PT+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Projects </title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 2em;
+        }
+        footer p {
+            text-align: right;
+            margin-right: 2%;
+            color: var(--whiteish);
+            position: absolute;
+            bottom: 0;
+            right: 2%;
+            font-size: .9em;
+        }
+
+        /* ============QUESTIONS===========
+        1. set hamburger menu as block element 
+        2 */
+        body {
+            font-family: 'K2D', sans-serif;
+            font-family: 'PT Sans', sans-serif;
+        }
+
+        #blog {
+            background: white;
+            /* height: 95vh; */
+            padding: 10%;
+
+
+        }
+
+        /* #blog */
+
+        #blog h2 {
+            border-top: 2px solid red;
+            padding-top: 2%;
+        }
+
+        #blog h3 {
+            padding-bottom: 2%;
+            border-bottom: 2px solid red;
+        }
+
+
+        #blog h2 {
+            font-size: 1.2em;
+            line-height: 1em;
+        }
+
+        #blog h3 {
+            font-size: 1em;
+        }
+
+        #blogTemplate {
+            display: none;
+
+        }
+
+        #project-list h3 {
+            margin: 0;
+        }
+
+        #projectList{
+            display: grid;
+            align-content: center;
+        }
+
+        .viewSite{
+            text-align: center;
+        }
+
+
+
+        @media only screen and (min-width: 500px) {
+            #top>article {
+                width: 50%;
+                padding: 2%;
+            }
+
+            .project-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                grid-auto-rows: 200px;
+                grid-gap: 10px;
+
+            }
+
+
+
+        }
+    </style>
+
+    <!-- ==============HANDLEBARS======= -->
+
+    <script id="project-template" type="text/x-handlebars-template">
+                <div class="content template project-details"  data-project="{{name}}">
+                  <div class = "row1">
+                    <img src= "{{image}}"/>
+                    <div>
+                    <h1 class="viewSite">{{name}}</h1>
+                    <h2>View Site | Repo</h2>
+                    </div>
+                 </div>
+                    <!-- <a href="{{link}}">
+                        <h3> go to site/repo</h3>
+                    </a> -->
+                <div class = "projDescription">
+                    <h2>Description</h2>
+                    <p class="description"> {{description}} </p>
+                </div>
+                    <!-- <h2>Challenges</h2>
+    
+                    <ul class = "challenges"> {{#each challenges}} 
+                        {{{this}}}
+                        {{/each}}
+                    </ul>
+                    <h2>Take Aways</h2> -->
+                    <!-- this method does a foreaach on each takeAway and puts it in an li -->
+                    <!-- <ul class = "takeAways"> {{#each takeAways}} 
+                       <li> {{this}}</li>
+                        {{/each}}
+
+                    </ul>   -->
+                </div>
+    </script>
+    <!-- <script id="blog-template" type="text/x-handlebars-template">
+                
+                <div class="blogContent blogTemplate blog-details"  data-blog="{{topic}}">
+                    <h2>{{topic}} </h2>
+                   
+                    <h2>{{date}} </h2>
+                    <p class = "notes"> {{notes}} </p>
+
+                </div>
+    </script> -->
+
+    <script id="github-template" type="text/x-handlebars-template">
+
+          <a href="{{html_url}}" target="_blank">
+            <h3>{{name}}</h3>
+          </a>
+          <p>Description: {{description}}</p>
+          <p>Language: {{language}}</p>
+          <p>Created: {{created_at}}</p>
+          <p>Last updated: {{updated_at}}</p>
+          {{#if watchers_count}}
+            <p>{{watchers_count}} watching this repo</p>
+          {{/if}}
+        
+    </script>
+
+    <!-- <section id="blog" >
+        <h1>Blog</h1>
+        <div class='blogTemplate'>
+        <h2></h2>
+        <h3></h3>
+        <p></p>
+        </div>
+        
+
+    </section> -->
+
+</head>
+
+<body>
+
+
+    <main>
+
+        <section id="top">
+            <article id="quote">
+                <!-- <img src="../emoji.png"/> -->
+
+                <h3>Coding Is Just Problem Sovlving In A Different Language
+                </h3>
+                <h4>-Wise words from a decent dev.</h4>
+
+            </article>
+
+            <!-- <h4>A site about Johnny Cruz</h4> -->
+        </section>
+        <nav>
+            <!-- <i class="fas fa-bars"></i>
+                        <a href="https://twitter.com/croozayy"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/cruzayye"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/cruzayye"><i class="fab fa-github"></i></a>
+                        <a href="mailto:johnnyc010392@gmail.com"><i class="fas fa-at"></i></a> -->
+            <!-- <span id="header"></span> -->
+            <i class="fas fa-bars"></i>
+            <section>
+                <aside>
+                    <div class="tab"><a href="#top">home</a></div>
+                    <div class="tab"><a href="#projectList">Projects</a></div>
+                    <div class="tab"><a href="#blogspot">Code Talk</a></div>
+                    <div class="tab"><a href="#github">github</a></div>
+                    <!-- <div class="tab"><a href="/home">home</a></div>
+                    <div class="tab"><a href="/projects">Projects</a></div>
+                    <div class="tab"><a href="/blog">Code Talk</a></div>
+                    <div class="tab"><a href="/github">github</a></div> -->
+                </aside>
+
+
+
+                <aside>
+                    <div class="tab"><a href="mailto:johnnyc010392@gmail.com"><i class="fas fa-envelope"></i></a></div>
+                    <div class="tab"><a href="https://github.com/cruzayye"><i class="fab fa-github-alt"></i></a></div>
+                    <div class="tab"><a href="https://linkedin.com/in/designercode
+                            "><i class="fab fa-linkedin"></i></a></div>
+                </aside>
+            </section>
+
+
+            <!-- <div class="tab"><a href="/about">About</a></div> -->
+        </nav>
+
+
+        <!-- ====================Split page  ===================== -->
+
+        <!-- <section id="code">
+            <div data-type="design"><a href="#project-list">Design</a></div>
+            <div data-type="code"><a href="#project-list">Code</a></div>
+
+        </section> -->
+
+
+
+        <!-- =======PROJECT lists======== -->
+
+        <section id="projectList" class="projectList">
+                <h2 class="container">Code Projects</h2>
+            <article id="project-list" class="project-list container">
+            <a href="#scrollToProject" id="barberstarrs" class="dropShadow" data-project="barberstarrs"
+                data-type="hybrid">
+                <!-- <img src="images/bw/cocktails.jpg"> -->
+                <h3>Barberstarrs Website</h3>
+            </a>
+            <a href="#scrollToProject" id="cocktail" class="dropShadow" data-project="Cocktail App" data-type="code">
+                <h3>Cocktail App</h3>
+            </a>
+
+            <a href="#scrollToProject" id="busmall" class="dropShadow" data-project="Data Analysis" data-type="code">
+                <h3>Data Analysis App</h3>
+            </a>
+            <a href="#scrollToProject" id="cookiestore" class="dropShadow" data-project="Cookie Store" data-type="code">
+                <h3>Cookie Store</h3>
+            </a>
+            <a href="#scrollToProject" id="quiz" class="dropShadow" data-project="Pop Quiz" data-type="code">
+                <h3>The Quiz</h3>
+            </a>
+        </article>
+        <h2 class=" container">Design Projects</h2>
+
+        <article class="project-list container">
+            <a href="#scrollToProject" id="noBalance" class="dropShadow" data-project="No Balance" data-type="design">
+                <h3>No Balance</h3>
+            </a>
+            <a href="#scrollToProject" id="h2" class="dropShadow" data-project="h2+" data-type="design">
+                <h3>Product Design</h3>
+            </a>
+            <a href="#scrollToProject" id="magazine" class="dropShadow" data-project="magazine" data-type="design">
+                <h3>Magazine</h3>
+            </a>
+            <a href="#scrollToProject" id="cookbook" class="dropShadow" data-project="cookbook" data-type="design">
+                <h3>Magazine</h3>
+            </a>
+        </article>
+
+
+        </section>
+
+        <!-- ====================PORJECT DESCRIPTIONS ===================== -->
+        <span id="scrollToProject"></span>
+        <section id="projectSection">
+
+
+
+        </section>
+
+        <!-- ====================PORJECT DESCRIPTIONS ===================== -->
+
+        <section id="about">
+            <div id="aboutWrap">
+                <aside class="emoji">
+                    <img src="../images/emoji2.png">
+                </aside>
+                <aside class="aboutme">
+                    <h2>A Little About Johnny Cruz</h2>
+                    <p>Woah... Thanks for showing interest my page. My names Johnny and I'm a full stack developer with a passion for Design. About a year ago I was working on some graphic design projects as a freelancer and I realized that if I ever wanted to take my digital content to the next level I was going to have to learn how to code and create web pages. I heard about online coding boot camps but I wanted a program that was face to face and personable. During my research, I came across Alchemy Code lab which is a local boot camp in downtown Portland, OR and joining this program was the best decision I've made all of 2018. I've spent my last 6 months (over 1000 hours) Learning Everything about JS. One thing I've realized is that the learning never stops and I will forever be a student. I enjoy learning new technologies and overall just leveling up my current skills. I hope I to help create appealing and intuitive applications for the world to use. Besides trying to be tech savvy I enjoy playing video games(currently stuck on Fortnite), jamming out to music(currently learning to play guitar) and playing basketball(currently trying to play more like Dame Lillard).  I'm glad to answer any of your tech questions, so please don't be shy!
+                    </p>
+                </aside>
+            </div>
+            <aside class="frameworks">
+                <div>
+                    <img src="../images/frameworks/sized/css.png" />
+                </div>
+                <div>
+                    <img src="../images/frameworks/sized/jquery.png" />
+
+                </div>
+                <!-- <div>
+                <img src="../images/frameworks/sized/mongo.png"/>
+            </div> -->
+                <div>
+                    <img src="../images/frameworks/sized/react.png" />
+                </div>
+                <div>
+                    <img src="../images/frameworks/sized/sql.png" />
+                </div>
+                <div>
+                    <img src="../images/frameworks/sized/node.png" />
+                </div>
+            </aside>
+
+
+
+        </section>
+
+
+
+        <!-- ====================BLOG GOES HERE ===================== -->
+        <section id="blogspot" class="blogSpot">
+            <h2 class="contentTitle">Code Talk </h2>
+            <article id="blogSection">
+                <aside class="blogContent blogTemplate blog-details">
+                    <h2 class="blogTitle">Light Intro to Backend Development</h2>
+                    <p class="notes">Long story short Backend Development is working with databases and dealing with sending and receiving data(http requests), but if your want a bit more info please continue reading...</br>
+                        Before this year, I knew that when it came to web development, there are 3 types of developers:
+                        backend developers, front end developers and fullstack developers. While front end devs focus on
+                        making sites look pretty and everything HTML, CSS, and Javascript. Backend devs deal with JS
+                        algorithms as well as working with servers, including retrieving users names passwords and
+                        information that the website handles. This leads to us to the topic of HTTP Methods aka CRUD,
+                        which is short for 'create', read, update and delete. okay... but how is this used? Let's use
+                        Instagram for example since that's what us millennials are into. When we open up the app and go
+                        to the home page to look at everyone's post we tapping into Instagram's database and asking it
+                        to <strong>GET</strong> data for us, which means that the developers have to make a function
+                        that lists all of the new posts that our friends have posted when we click the home icon. Have
+                        you ever thought about what kind of method is used to 'upload' a picture? Well, when uploading
+                        or creating any kind of content for the world to see we use a <stong>POST</stong> method to send
+                        new information to the server. What about to delete? well, you guessed it <strong>
+                            DELETE</strong>. Another commonly used method would be <strong>PATCH</strong>, or
+                        <strong>PUT</strong> which wouldn't be used for a picture but for a comment. For example, you
+                        might have made typo; sometimes we might spell a word so wrong on our smartphone that
+                        autocorrect isn't even able to correct it. If you're considering getting started with Backend
+                        development and be able to dabble with these CRUD methods You're going to have to look into <a
+                            href="https://www.nodebeginner.org/"> Node</a>. This link is a deep introductory to Node JS
+                        is the javascript framework that lets us do backend development. Once you get done with that
+                        check out these articles as well.. or just skip ahead and get a preview of what to come!
+                        <ol class="notes">
+                            <li> <a
+                                    href="https://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177">HTTP
+                                    Protocols</a></li>
+                            <li><a href="https://spring.io/understanding/REST">REST</a></li>
+
+                        </ol>
+                    </p>
+
+
+                </aside>
+                <aside class="blogContent blogTemplate blog-details">
+                    <h2 class="blogTitle">Want to Learn Code??</h2>
+                    <p class="notes">So you want to learn about code huh? If you enjoy not having an idea about what
+                        you’re doing and your pretty decent at maneuvering your way through google to find your answers,
+                        then you chose the right field. If you have no Idea what type of coding you want to dive into,
+                        figure out what technology you want to learn...Do you want to make video games for Nintendo or
+                        Playstation? Then you would want to look into <span>c++, c#</span> and <span>java</span>. Want
+                        to learn about data management, working with tables and using that information in a unique way
+                        such as portraying stats? <span>SQL or Python<span> are whee its at. If you’re like me and
+                                you're looking into designing websites and web applications then you’re going to start
+                                with html/css, then move onto <span>javascrtipt<span>, which makes websites more robust
+                                        and intuitive. Since I’m a front end developer Heres my secret:
+                                        <ol class="notes sites">
+                                            <li>
+                                                Learn the basics of HTML/CSS for free at <a
+                                                    href="https://www.khanacademy.org/computing/"> khan Academy </a>
+                                                Look for the section about creating webpages.
+
+                                            </li>
+                                            <li>
+                                                Make a website. Start with a simple gallery of images with a 3 rows and
+                                                3 columns or something better you can come up with. There are several
+                                                tutorials out there, use your google skills to find the right one.
+                                            </li>
+                                            <li>
+                                                Learn JS and practice everyday. There are so many websites as resources
+                                                out there that its hard to choose. Check out these 3 sites. What's
+                                                awesome about Udemy is that they provide full on courses and have sales
+                                                all the time where the course turns out to be less than $15.00. Theres a
+                                                lot of hype around freecodecamp as well and I sometimes use it as a
+                                                reference.
+                                                <ul>
+                                                    <li><a href="https://www.udemy.com/">Udemy</a></li>
+                                                    <li><a href="https://www.freecodecamp.org/">Free Code Camp</a></li>
+                                                    <li><a href="https://www.khanacademy.org/">Khan Academy</a></li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+                    </p>
+
+                    <p class="notes"> Toughest part about learning on your own is discipline and holding yourself
+                        accountable. No one’s going to tell you what you have to do as far as staying consistent so it’s
+                        easier to just tell yourself that you’ll get to it eventually, but Soon enough eventually
+                        becomes never. If this is your issue check to see if theirs an in person bootcamp in your city.
+                        Being around coders will help you make connections and push you further. Personally I don't
+                        think I would have learned as much online because my lack of discipline, but thats just me,
+                        chances are you're a lot more self motiated than me. Don’t get discouraged to join an online
+                        bootcamp, the right one will have a course that gets you to build projects that lead into a
+                        plehora amount of knowledge. BUT PLEASE DO YOUR RESEARCH because not all of them are going to
+                        give you the tools and knowledge to prep you for a job. If I never joined a bootcamp I would
+                        have never considered learning github, SQL, the command line and practicing code on sites like
+                        <a href="https://www.codewars.com/">Codewars</a> and <a
+                            href="https://codesignal.com/">Codesignal.</a> Long story short DO YOUR RESEARCH, commit and
+                        code everyday!</p>
+                </aside>
+                <aside class="blogContent blogTemplate blog-details">
+                    <h2 class="blogTitle">Why Podcasts</h2>
+                    <p class="notes">Never did I think I would be a podcast listener but if you want to keep up with
+                        this fast paced industry where the learning never stops, you're going to have to divulge
+                        yourself with everything about coding. listening to podcasts over my gangster rap music has made
+                        me more fluent when it comes to talking code as well as given me ideas for my code. There will
+                        be many times where I got done learning a new subject such as Test Driven Development and I had
+                        no idea what the heck Just read, but then I run into a podcast on that subject which answers a
+                        lot of my questions. There was also another time that I was listening to a coding podcast and I
+                        needed help with an ajax call. The TA went off into talking about promises which I was able to
+                        quickly catch on because the podcast (syntax) had mentioned the promise method on my drive to
+                        class. Here are a list of podcasts I listen to off of Spotify:
+                        <ol class="notes">
+                            <li>Code Newbie</li>
+                            <li>Sytax</li>
+
+                        </ol>
+                    </p>
+
+
+                </aside>
+
+
+
+
+            </article>
+        </section>
+        <!-- ====================GIT GOES HERE  ===================== -->
+
+        <section id="leggo">
+
+
+        </section>
+    </main>
+
+
+
+
+
+
+</body>
+<script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+<!-- fake pag.js -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.11.3/page.min.js"></script> -->
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+<!-- <script type="text/javascript" src="raw_data.js"></script> -->
+<script type="text/javascript" src="js/constructor.js"></script>
+<script type="text/javascript" src="js/blog.js"></script>
+<script type="text/javascript" src="js/eventlisteners.js"></script>
+<!-- <script type="text/javascript" src="js/controllers/home_page.js"></script> -->
+<!-- <script type="text/javascript" src="js/controllers/project_page.js"></script> -->
+<!-- <script type="text/javascript" src="js/controllers/blog_page.js"></script>
+<script type="text/javascript" src="js/repo.js"></script>
+<script type="text/javascript" src="js/repoView.js"></script>
+<script type="text/javascript" src="js/githubController.js"></script>
+<script type="text/javascript" src="js/controllers/routes.js"></script> -->
+<script src="js/scroll.js"> </script>
+<script>
+
+</script>
+
+</html>
