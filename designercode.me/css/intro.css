@@ -12,13 +12,20 @@ body{
 
 }
 
-#top{
-  height: 87vh;
-  background-image: url("../../darkBg.png");
-  background-attachment: fixed;
 
+#top{
+  background: url("../images//images/bg_small.png");
   background-size: cover;
+  position: -webkit-fixed;
+  height: 90vh;
 }
+// #top{
+//   height: 87vh;
+//   background-image: url("../images//images/bg_small.png");
+//   background-attachment: fixed;
+
+//   background-size: cover;
+// }
 
 #top{
   display: flex;
@@ -55,7 +62,7 @@ body{
 
 }
 
-nav{
+#nav{
   overflow: hidden;
   width: 100%;
   /* height: auto; */
@@ -65,8 +72,9 @@ nav{
   
   /* position: -webkit-sticky; */
   position: sticky;
+  position: -webkit-sticky;
   /* position: fixed; */
-  top: 0;
+  bottom: 0;
   
   
 }
@@ -75,7 +83,7 @@ nav{
 
 } */
 
-nav section{
+#nav section{
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
@@ -88,19 +96,7 @@ nav section{
   color: pink;
 }
 
-nav aside{
-  display: flex;
-  
-}
 
-nav aside{
-  align-self: end;
-}
-
-nav aside:nth-of-type(2){
- justify-self: end;
-
-}
 
 .fa-bars{
   margin-top: 2%;
@@ -109,16 +105,16 @@ nav aside:nth-of-type(2){
 
 
 
-nav div{
+#nav div{
   padding: 0px 10px 0px 10px;
   
 }
-nav img{
+#nav img{
   width: 5%;
   padding: 1%;
 }
 
-nav .fa-bars{
+#nav .fa-bars{
   width: 100%;
   text-align: center;
   
@@ -147,13 +143,18 @@ a{
 
 
 }
-nav  a{
+#nav aside:nth-of-type(2){
+  justify-self: end;
+ 
+ }
+
+#nav  a{
   color: white;
 
 
 
 }
-nav a:hover, nav .fa-bars:hover{
+#nav a:hover, #nav .fa-bars:hover{
   color: #c40bce;
 
 
@@ -166,4 +167,28 @@ nav a:hover, nav .fa-bars:hover{
 
 #quote h4{
   margin-top: 0;
+}
+
+@media screen and (min-width: 700px) {
+  #nav aside{
+    display: flex;
+    
+  }
+  
+  #nav aside{
+    align-self: end;
+  }
+
+  #top{
+    background-image: url("../images/images/darkBg.png");
+    background-attachment: fixed;
+    background-size: cover;
+
+
+  }
+  
+
+
+  
+
 }

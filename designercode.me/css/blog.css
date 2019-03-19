@@ -1,13 +1,20 @@
 #blogspot{
   min-height: 100vh;
   border-top: 1px solid black;
-  background-image: url(../../darkBgflipped.png);
-  background-attachment: fixed;
-  background-size: cover;
+  background-image: url("../images//images/bg_small.png");
+  background-repeat: no-repeat;
+  background-color: black;
+  // background-size: cover;
 }
+// #top{
+//   background: url("../images//images/bg_small.png");
+//   background-size: cover;
+//   position: -webkit-fixed;
+//   height: 90vh;
+// }
 
-#blogSection {
-  width: 75%;
+.underline {
+  text-decoration: underline;
 }
 
 .blogSpot{
@@ -37,6 +44,7 @@
 
 .blogContent{
   border-bottom: #9f09ad solid 1px;
+  // background-color: black;
 }
 
 .notes {
@@ -52,6 +60,10 @@
 
 }
 
+#blogspot strong {
+  color: #9f09ad;
+}
+
 
 #blogSection a {
   /* color: var(--whiteish); */
@@ -65,3 +77,16 @@
 .notes{
   display: none;
 }
+@media (min-width: 600px) {
+  #blogSection {
+    width: 75%;
+  }
+  #blogspot{
+    min-height: 100vh;
+    background-image: url("../images/images/darkBgflipped.png");
+    background-attachment: fixed;
+    
+    background-size: cover;
+  }
+}
+

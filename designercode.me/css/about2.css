@@ -3,7 +3,6 @@
 }
 #aboutWrap{
   padding: 5%;
-  border-top: 1px solid white;
   justify-items: center;
   display: grid;
   grid-template-columns: 1fr;
@@ -17,13 +16,15 @@
   text-align: left;
   border-left: 1px solid white;
   padding-left: 3%;
-  color: black;
+  // color: black;
+  // font-size: 72px;
+  color: #e1e5e5;
   
 }
 
 .frameworks{
   display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);  
+  grid-template-columns: repeat(auto-fit, 60px);  
   justify-items: center;
   align-items: center;
   justify-content: center;
@@ -38,20 +39,30 @@
 }
 
  .frameworks img { 
-  height: 10vh;
+  height: 6vh;
 }
 
 #about{
   // background-color: white;
   background-image:
     linear-gradient(
-      white, black
+      #2e0e31, black
     );
+}
+
+.hideAbout {
+  opacity: 0;
+}
+
+.show{
+  opacity: 1;
 }
 
 
 
-@media(min-width: 600px){
+
+
+@media(min-width: 700px){
   
   #aboutWrap{
     grid-template-columns: 1fr 1fr;
@@ -68,6 +79,16 @@
   .emoji{
     padding-right: 2%;
   }
+
+  .frameworks{
+    grid-template-columns: repeat(auto-fit, 200px);  
+
+  }
+
+  .frameworks img { 
+    height: 10vh;
+  }
+  
 
 
 }

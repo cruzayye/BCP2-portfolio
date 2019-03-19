@@ -1,4 +1,26 @@
-//  ============scroll=======   
+
+var controller = new ScrollMagic.Controller();
+new ScrollMagic.Scene({
+        triggerElement: '#projectList'    // the scene should last for a scroll distance of 100px
+        // offset: 50    // start this scene after scrolling for 50px
+    })
+    .setClassToggle(".dropShadow", 'show') // pins the element for the the scene's duration
+    .addTo(controller); // assign the scene to the controller
+
+var about = new ScrollMagic.Controller();
+new ScrollMagic.Scene({
+        triggerElement: '#cookbook'    // the scene should last for a scroll distance of 100px
+        // offset: 50    // start this scene after scrolling for 50px
+    })
+    .setClassToggle(".hideAbout", 'show') // pins the element for the the scene's duration
+    .addTo(about); // assign the scene to the controller
+
+
+
+
+
+
+
 
 $('a[href*="#"]')
   // Remove links that don't actually link to anything
@@ -35,3 +57,4 @@ $('a[href*="#"]')
       }
     }
   });
+

@@ -23,11 +23,12 @@
 
     <title>Projects </title>
     <style>
-        body{
+        body {
             font-family: Arial, Helvetica, sans-serif;
             line-height: 2em;
         }
-        footer p {
+
+        /* footer p {
             text-align: right;
             margin-right: 2%;
             color: var(--whiteish);
@@ -35,7 +36,7 @@
             bottom: 0;
             right: 2%;
             font-size: .9em;
-        }
+        } */
 
         /* ============QUESTIONS===========
         1. set hamburger menu as block element 
@@ -49,11 +50,16 @@
             background: white;
             /* height: 95vh; */
             padding: 10%;
+        }
 
+        #nav {
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
 
         }
 
-        /* #blog */
+
 
         #blog h2 {
             border-top: 2px solid red;
@@ -84,13 +90,21 @@
             margin: 0;
         }
 
-        #projectList{
+        /* #projectList{
             display: grid;
             align-content: center;
+        } */
+
+        .viewSite {
+            text-align: center;
         }
 
-        .viewSite{
+        footer {
+            background-color: black;
             text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: .9em;
+            padding-bottom: 1%;
         }
 
 
@@ -102,12 +116,15 @@
             }
 
             .project-list {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
                 grid-auto-rows: 200px;
                 grid-gap: 10px;
 
+
             }
+
+
+
 
 
 
@@ -119,10 +136,12 @@
     <script id="project-template" type="text/x-handlebars-template">
                 <div class="content template project-details"  data-project="{{name}}">
                   <div class = "row1">
-                    <img src= "{{image}}"/>
-                    <div>
+                    <img src= "{{image}}" class="projImg"/>
+                    <div class="projHeader">
                     <h1 class="viewSite">{{name}}</h1>
+                    <a href="{{link}}">
                     <h2>View Site | Repo</h2>
+                    </a>
                     </div>
                  </div>
                     <!-- <a href="{{link}}">
@@ -202,8 +221,9 @@
             </article>
 
             <!-- <h4>A site about Johnny Cruz</h4> -->
+
         </section>
-        <nav>
+        <div id="nav">
             <!-- <i class="fas fa-bars"></i>
                         <a href="https://twitter.com/croozayy"><i class="fab fa-twitter"></i></a>
                         <a href="https://instagram.com/cruzayye"><i class="fab fa-instagram"></i></a>
@@ -216,7 +236,7 @@
                     <div class="tab"><a href="#top">home</a></div>
                     <div class="tab"><a href="#projectList">Projects</a></div>
                     <div class="tab"><a href="#blogspot">Code Talk</a></div>
-                    <div class="tab"><a href="#github">github</a></div>
+                    <!-- <div class="tab"><a href="https://github.com/cruzayye">github</a></div> -->
                     <!-- <div class="tab"><a href="/home">home</a></div>
                     <div class="tab"><a href="/projects">Projects</a></div>
                     <div class="tab"><a href="/blog">Code Talk</a></div>
@@ -235,7 +255,8 @@
 
 
             <!-- <div class="tab"><a href="/about">About</a></div> -->
-        </nav>
+        </div>
+
 
 
         <!-- ====================Split page  ===================== -->
@@ -251,43 +272,52 @@
         <!-- =======PROJECT lists======== -->
 
         <section id="projectList" class="projectList">
-                <h2 class="container">Code Projects</h2>
+            <h2 class="container">Code Projects</h2>
             <article id="project-list" class="project-list container">
-            <a href="#scrollToProject" id="barberstarrs" class="dropShadow" data-project="barberstarrs"
-                data-type="hybrid">
-                <!-- <img src="images/bw/cocktails.jpg"> -->
-                <h3>Barberstarrs Website</h3>
-            </a>
-            <a href="#scrollToProject" id="cocktail" class="dropShadow" data-project="Cocktail App" data-type="code">
-                <h3>Cocktail App</h3>
-            </a>
+                <a href="#scrollToProject" id="barberstarrs" class="dropShadow" data-project="barberstarrs"
+                    data-type="hybrid">
+                    <!-- <img src="images/bw/cocktails.jpg"> -->
+                    <h3>Barberstarrs Website</h3>
+                </a>
+                <a href="#scrollToProject" id="popup" class="dropShadow" data-project="popup"
+                    data-type="code">
+                    <h3>Pop-up API</h3>
+                </a>
+                <a href="#scrollToProject" id="cocktail" class="dropShadow" data-project="Cocktail App"
+                    data-type="code">
+                    <h3>Cocktail App</h3>
+                </a>
 
-            <a href="#scrollToProject" id="busmall" class="dropShadow" data-project="Data Analysis" data-type="code">
-                <h3>Data Analysis App</h3>
-            </a>
-            <a href="#scrollToProject" id="cookiestore" class="dropShadow" data-project="Cookie Store" data-type="code">
-                <h3>Cookie Store</h3>
-            </a>
-            <a href="#scrollToProject" id="quiz" class="dropShadow" data-project="Pop Quiz" data-type="code">
-                <h3>The Quiz</h3>
-            </a>
-        </article>
-        <h2 class=" container">Design Projects</h2>
+                <a href="#scrollToProject" id="busmall" class="dropShadow" data-project="Data Analysis"
+                    data-type="code">
+                    <h3>Data Analysis App</h3>
+                </a>
+                <a href="#scrollToProject" id="cookiestore" class="dropShadow" data-project="Cookie Store"
+                    data-type="code">
+                    <h3>Cookie Store</h3>
+                </a>
+                <a href="#scrollToProject" id="meme" class="dropShadow" data-project="Meme Generator" data-type="code">
+                    <h3>Meme Generator</h3>
+                </a>
 
-        <article class="project-list container">
-            <a href="#scrollToProject" id="noBalance" class="dropShadow" data-project="No Balance" data-type="design">
-                <h3>No Balance</h3>
-            </a>
-            <a href="#scrollToProject" id="h2" class="dropShadow" data-project="h2+" data-type="design">
-                <h3>Product Design</h3>
-            </a>
-            <a href="#scrollToProject" id="magazine" class="dropShadow" data-project="magazine" data-type="design">
-                <h3>Magazine</h3>
-            </a>
-            <a href="#scrollToProject" id="cookbook" class="dropShadow" data-project="cookbook" data-type="design">
-                <h3>Magazine</h3>
-            </a>
-        </article>
+            </article>
+            <h2 class=" container">Design Projects</h2>
+
+            <article class="project-list container">
+                <a href="#scrollToProject" id="noBalance" class="dropShadow" data-project="No Balance"
+                    data-type="design">
+                    <h3>Wordpress Site</h3>
+                </a>
+                <a href="#scrollToProject" id="h2" class="dropShadow" data-project="h2+" data-type="design">
+                    <h3>Product Design</h3>
+                </a>
+                <a href="#scrollToProject" id="magazine" class="dropShadow" data-project="magazine" data-type="design">
+                    <h3>Magazine</h3>
+                </a>
+                <a href="#scrollToProject" id="cookbook" class="dropShadow" data-project="cookbook" data-type="design">
+                    <h3>Cookbook</h3>
+                </a>
+            </article>
 
 
         </section>
@@ -303,37 +333,38 @@
         <!-- ====================PORJECT DESCRIPTIONS ===================== -->
 
         <section id="about">
-            <div id="aboutWrap">
-                <aside class="emoji">
-                    <img src="../images/emoji2.png">
-                </aside>
-                <aside class="aboutme">
-                    <h2>A Little About Johnny Cruz</h2>
-                    <p>Woah... Thanks for showing interest my page. My names Johnny and I'm a full stack developer with a passion for Design. About a year ago I was working on some graphic design projects as a freelancer and I realized that if I ever wanted to take my digital content to the next level I was going to have to learn how to code and create web pages. I heard about online coding boot camps but I wanted a program that was face to face and personable. During my research, I came across Alchemy Code lab which is a local boot camp in downtown Portland, OR and joining this program was the best decision I've made all of 2018. I've spent my last 6 months (over 1000 hours) Learning Everything about JS. One thing I've realized is that the learning never stops and I will forever be a student. I enjoy learning new technologies and overall just leveling up my current skills. I hope I to help create appealing and intuitive applications for the world to use. Besides trying to be tech savvy I enjoy playing video games(currently stuck on Fortnite), jamming out to music(currently learning to play guitar) and playing basketball(currently trying to play more like Dame Lillard).  I'm glad to answer any of your tech questions, so please don't be shy!
-                    </p>
-                </aside>
-            </div>
-            <aside class="frameworks">
+            <aside class="frameworks hideAbout">
                 <div>
-                    <img src="../images/frameworks/sized/css.png" />
+                    <img src="./images/images/frameworks/sized/css.png" />
                 </div>
                 <div>
-                    <img src="../images/frameworks/sized/jquery.png" />
+                    <img src="./images/images/frameworks/sized/jquery.png" />
 
                 </div>
                 <!-- <div>
-                <img src="../images/frameworks/sized/mongo.png"/>
-            </div> -->
+                        <img src="./images/images/frameworks/sized/mongo.png"/>
+                    </div> -->
                 <div>
-                    <img src="../images/frameworks/sized/react.png" />
+                    <img src="./images/images/frameworks/sized/react.png" />
                 </div>
                 <div>
-                    <img src="../images/frameworks/sized/sql.png" />
+                    <img src="./images/images/frameworks/sized/sql.png" />
                 </div>
                 <div>
-                    <img src="../images/frameworks/sized/node.png" />
+                    <img src="./images/images/frameworks/sized/node.png" />
                 </div>
             </aside>
+            <div id="aboutWrap"  class="hideAbout">
+                <aside class="emoji">
+                    <img src="./images/images/emoji2.png">
+                </aside>
+                <aside class="aboutme">
+                    <h2>A Little About Johnny Cruz</h2>
+                    <p>Woah... Thanks for showing interest my page. My names Johnny, and I'm a full stack developer with a passion for Design. About a year ago I was working on some graphic design projects as a freelancer and I realized that if I ever wanted to take my digital content to the next level I was going to have to learn to code in order to create web pages. I heard about online coding programs but I wanted something that was personable. During my research, I came across Alchemy Code lab which is a full stack Javasript program based out of Portland, OR.  Taking this course was the best decision I made all of 2018. I've spent my last 6 months (over 1000 hours) Learning Everything about JS. One thing I've realized is that the learning never stops and I will forever be a student. I enjoy learning new technologies and overall just leveling up my current skills. My goal is to create appealing and intuitive front end applications for the world to use. Besides trying to be tech savvy I enjoy playing video games(currently stuck on Fortnite), jamming out to music(currently learning to play guitar) and playing basketball(currently trying to play more like Dame Lillard). I'm glad to answer any of your tech questions, so please, ask away!
+                    </p>
+                </aside>
+            </div>
+
 
 
 
@@ -346,8 +377,87 @@
             <h2 class="contentTitle">Code Talk </h2>
             <article id="blogSection">
                 <aside class="blogContent blogTemplate blog-details">
+                    <h2 class="blogTitle">REACT-What's the hype?</h2>
+                    <p class="notes">
+                        Before I learned about react I was anxious to know how to use it since so many people hyped it
+                        up. For some reason, I thought that because people were so excited to talk about react, it
+                        correlated to being an easy framework to learn. However, it was not as easy as I thought it
+                        would be. However, don’t let this discourage you from learning React since we all pick up new
+                        subjects at a different pace. Plus, as long as you’re comfortable with Js then there’s no reason
+                        for anyone to not be able to pick up this framework. <br />
+
+                        One word to describe the process of React would be abstract. When I started using React I came
+                        to find out that even though it is still Javascript its a completely different way of creating
+                        web pages, letting you write up all your HTML and CSS within JS. What was most confusing to me
+                        was the idea of passing state to props. Once I figured out the difference between state, props
+                        and static props, as well as extracting each component to its own file, then it all clicked.
+                        What I came to realize is that components are simply just functions. Nav bars, footers, buttons
+                        get extracted to their own components/file and even though a Nav might not be functional we
+                        still implement it in its own component which is a representational function that renders
+                        itself. In other words, we put the Nav in its own functions which takes props aka parameters
+                        which are needed to build the Nav. We can think of props such as attributes. In order to build a
+                        common nav bar we need links such as home, blog, about. These 3 could be considered props which
+                        can be used to build the nav bar. The fact that each component needs to be extracted to its own
+                        file may sound like a lot of work at first but the cool thing about this is that each component
+                        can easily be reused throughout your app by simply importing your component wherever you want to
+                        use it. <br />
+
+                        But why even learn React other than it being a popular framework used by several companies? If
+                        you’re already comfortable with JS and want to make yourself more marketable when looking for a
+                        job, then React definitely won't hurt to have under your belt. What makes React so unique is
+                        that it saves a lot of loading time by incorporating a virtual dom (don't worry, even though
+                        this is a feature of React there's not much to know about the virtual dom, besides reaping its
+                        benefits) Anyways, the virtual dom only renders state(elements)that have been changed. For
+                        example, if your app makes an API call the page needs to reload with that new data. Without
+                        React all elements including images, Headers etc would need to reload, but with React only that
+                        new API element reloads. This is especially noticeable with huge apps, impacting both the User
+                        experience and overall performance on your app.
+                        If you are looking into learning react here's some common terminology/tools you’ll want to get
+                        to know. Besides youtube and Udemy I would recommend Wes <a
+                            href="https://reactforbeginners.com/">Bos’ course on React</a>. <br>
+                        <strong>React For Web-</strong> React's version of making web applications<br />
+                        <strong>React Native-</strong> React's version of making mobile applications<br />
+                        <strong>State-</strong> Data or elements that can change in the dom e.g user input API calls,
+                        images.<br />
+                        <strong>Props</strong> These can be considered as attributes when creating component. <br />
+                        <strong>Prop Types-</strong>Whenever components take in any prop, we can declare what kind of
+                        element we expecting to pass through from our Presentational Component. These can be functions,
+                        array, objects etc. Prop types are optional but are highly recommended to help other developers
+                        know what kind of elements can be passed through and will help prevent bugs. <br />
+                        <strong>Presentational Components-</strong> Components that are pertaining to how something is
+                        going to look. can also be considered as dummy components since they don't directly deal with
+                        state.<br />
+                        <strong>container Components-</strong> Components that pertain to how things work. They deal
+                        directly with state and end up rendering the final outcome of the component. <br />
+                        <strong>Pure Components-</strong> Goes along with Presentational component, only renders state
+                        that was updated <br />
+                        <strong>Class Components-</strong> Also goes along with Presentational component, renders all
+                        state within the component<br />
+                        <strong>React Router-</strong> A simple API which helps hook up our routes between different
+                        pages/components. <br />
+                        <strong>Babel-</strong> React is dependent on babel in order for us to be able to write HTML and
+                        CSS in Javascript. <br />
+
+                    </p>
+                </aside>
+
+                <aside class="blogContent blogTemplate blog-details">
+                    <h2 class="blogTitle">Node, A JS Blessing.</h2>
+                    <p class="notes">Before I started working with Node I was so Oblivious to the backend and how powerful it was. I didn't Even know what An API was exactly. I knew it stood for an Application Processing Interface, but I wasn't able to dive deep into the topic. Once I created my first backend Application I was awed by node and its magic. Node is a runtime environment which easily gets confused with a framework or library. Node Allows us Javascript developers to write backend code with Javascript. Before Node, Javascript was only limited to front end development, making Node a pretty big deal for several reasons. First off all, we can create a full stack application using only one language, so theres no need to take extra time to learn PHP, Python or Java. All you need to do is npm i Node with a couple other packages and you're on your way! Ok, there's a bit of a learning curve, but since you already know Javascript you will at least be familiar with some of the syntax. If you're new to node or the backend in general, here are some terms you'll come across in the backend world. <br/>
+                   
+                    <strong>HTTP</strong>-Short for Hyper Text Transfer Protocol. We can create/update  data on the client side through CRUD Methods including, GET, PUT, POST, DELETE and PATCH. <br/>
+                    <strong>Express</strong>-A popular Node JS framework which allows us to create a server and and set up our CRUD methods. <a class="underline" href="https://scotch.io/bar-talk/10-node-frameworks-to-use-in-2019">Here</a> are some similar frameworks with different features.<br/>
+                    <strong><a class="underline"  href="https://www.npmjs.com/">Node Package Manager(NPM)</a></strong>-An ecosystem full of scripts that developers can share. If you're trying to code a common functionality for an app which you've see across different applications, chances are you can find it though the <a class="underline" href="https://www.npmjs.com/">NPM website</a>.<br/>
+                    <strong>Module.exports</strong>-Allows us to organize our functions and easily inject them between other files.<br/>
+                    <strong>Middleware</strong>-Functions that run in between calls made outside of our application. Middleware can be used to debugging and checking for Connection errors. For example If we are trying to connect to our database we can throw an error function that logs that theres a problem with with connecting. 
+                </p>
+                </aside>
+                
+                <aside class="blogContent blogTemplate blog-details">
                     <h2 class="blogTitle">Light Intro to Backend Development</h2>
-                    <p class="notes">Long story short Backend Development is working with databases and dealing with sending and receiving data(http requests), but if your want a bit more info please continue reading...</br>
+                    <p class="notes">Long story short Backend Development is working with databases and dealing with
+                        sending and receiving data(http requests), but if your want a bit more info please continue
+                        reading...</br>
                         Before this year, I knew that when it came to web development, there are 3 types of developers:
                         backend developers, front end developers and fullstack developers. While front end devs focus on
                         making sites look pretty and everything HTML, CSS, and Javascript. Backend devs deal with JS
@@ -381,14 +491,14 @@
 
                 </aside>
                 <aside class="blogContent blogTemplate blog-details">
-                    <h2 class="blogTitle">Want to Learn Code??</h2>
+                    <h2 class="blogTitle">Should You Learn To Code?</h2>
                     <p class="notes">So you want to learn about code huh? If you enjoy not having an idea about what
                         you’re doing and your pretty decent at maneuvering your way through google to find your answers,
                         then you chose the right field. If you have no Idea what type of coding you want to dive into,
                         figure out what technology you want to learn...Do you want to make video games for Nintendo or
                         Playstation? Then you would want to look into <span>c++, c#</span> and <span>java</span>. Want
                         to learn about data management, working with tables and using that information in a unique way
-                        such as portraying stats? <span>SQL or Python<span> are whee its at. If you’re like me and
+                        such as portraying stats? <span>SQL or Python<span> are where its at. If you’re like me and
                                 you're looking into designing websites and web applications then you’re going to start
                                 with html/css, then move onto <span>javascrtipt<span>, which makes websites more robust
                                         and intuitive. Since I’m a front end developer Heres my secret:
@@ -468,7 +578,11 @@
 
 
         </section>
+
     </main>
+    <footer>ATTN: If you are thinking about using any of my content please make sure to not hesitate! I only hope that my
+        content takes your content to the next level! </footer>
+
 
 
 
@@ -476,12 +590,14 @@
 
 
 </body>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
 <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
 <!-- fake pag.js -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.11.3/page.min.js"></script> -->
 
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
 <!-- <script type="text/javascript" src="raw_data.js"></script> -->
 <script type="text/javascript" src="js/constructor.js"></script>
 <script type="text/javascript" src="js/blog.js"></script>
@@ -493,7 +609,7 @@
 <script type="text/javascript" src="js/repoView.js"></script>
 <script type="text/javascript" src="js/githubController.js"></script>
 <script type="text/javascript" src="js/controllers/routes.js"></script> -->
-<script src="js/scroll.js"> </script>
+<script src="./js/scroll.js"> </script>
 <script>
 
 </script>
