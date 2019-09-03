@@ -2,7 +2,6 @@
 
 $('#code').on('click', 'div', function(){
   let path = $(this).data('type');
-  console.log(data);
   // let list = $('#project-list').children();
  
   // console.log(list)
@@ -26,7 +25,6 @@ $(".project-list").on('click', 'a', function() {
   projectsArray.forEach(function(project) {
     if(project.name == data){
        $('#projectSection').children('[data-project="' + data + '"]').fadeIn();
-      console.log(project);  
       // $('#projectSection').focus();
 
 

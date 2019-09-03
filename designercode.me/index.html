@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="css/about2.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/typewriterEffect.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
         integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=K2D:400,400i|PT+Sans" rel="stylesheet">
@@ -109,6 +111,8 @@
 
 
 
+
+
         @media only screen and (min-width: 500px) {
             #top>article {
                 width: 50%;
@@ -136,11 +140,11 @@
     <script id="project-template" type="text/x-handlebars-template">
                 <div class="content template project-details"  data-project="{{name}}">
                   <div class = "row1">
-                    <img src= "{{image}}" class="projImg"/>
+                    <img src= "{{image}}" class="projImg" alt="{{name}}"/>
                     <div class="projHeader">
                     <h1 class="viewSite">{{name}}</h1>
                     <a href="{{link}}">
-                    <h2>View Site | Repo</h2>
+                    <h2>View More</h2>
                     </a>
                     </div>
                  </div>
@@ -150,21 +154,8 @@
                 <div class = "projDescription">
                     <h2>Description</h2>
                     <p class="description"> {{description}} </p>
-                </div>
-                    <!-- <h2>Challenges</h2>
-    
-                    <ul class = "challenges"> {{#each challenges}} 
-                        {{{this}}}
-                        {{/each}}
-                    </ul>
-                    <h2>Take Aways</h2> -->
-                    <!-- this method does a foreaach on each takeAway and puts it in an li -->
-                    <!-- <ul class = "takeAways"> {{#each takeAways}} 
-                       <li> {{this}}</li>
-                        {{/each}}
-
-                    </ul>   -->
-                </div>
+                    
+           
     </script>
     <!-- <script id="blog-template" type="text/x-handlebars-template">
                 
@@ -192,16 +183,6 @@
         
     </script>
 
-    <!-- <section id="blog" >
-        <h1>Blog</h1>
-        <div class='blogTemplate'>
-        <h2></h2>
-        <h3></h3>
-        <p></p>
-        </div>
-        
-
-    </section> -->
 
 </head>
 
@@ -209,10 +190,18 @@
 
 
     <main>
+        
+        <section id="practice">
+            <article class="practiceQuote" >
+            <div class="typewriter" id="typedtext">
 
-        <section id="top">
+            </div>
+            </article>
+        </section>
+
+        <!-- <section id="top">
+
             <article id="quote">
-                <!-- <img src="../emoji.png"/> -->
 
                 <h3>Coding Is Just Problem Sovlving In A Different Language
                 </h3>
@@ -220,27 +209,16 @@
 
             </article>
 
-            <!-- <h4>A site about Johnny Cruz</h4> -->
 
-        </section>
+        </section> -->
         <div id="nav">
-            <!-- <i class="fas fa-bars"></i>
-                        <a href="https://twitter.com/croozayy"><i class="fab fa-twitter"></i></a>
-                        <a href="https://instagram.com/cruzayye"><i class="fab fa-instagram"></i></a>
-                        <a href="https://github.com/cruzayye"><i class="fab fa-github"></i></a>
-                        <a href="mailto:johnnyc010392@gmail.com"><i class="fas fa-at"></i></a> -->
-            <!-- <span id="header"></span> -->
+   
             <i class="fas fa-bars"></i>
             <section>
                 <aside>
                     <div class="tab"><a href="#top">home</a></div>
                     <div class="tab"><a href="#projectList">Projects</a></div>
                     <div class="tab"><a href="#blogspot">Code Talk</a></div>
-                    <!-- <div class="tab"><a href="https://github.com/cruzayye">github</a></div> -->
-                    <!-- <div class="tab"><a href="/home">home</a></div>
-                    <div class="tab"><a href="/projects">Projects</a></div>
-                    <div class="tab"><a href="/blog">Code Talk</a></div>
-                    <div class="tab"><a href="/github">github</a></div> -->
                 </aside>
 
 
@@ -257,30 +235,23 @@
             <!-- <div class="tab"><a href="/about">About</a></div> -->
         </div>
 
-
-
-        <!-- ====================Split page  ===================== -->
-
-        <!-- <section id="code">
-            <div data-type="design"><a href="#project-list">Design</a></div>
-            <div data-type="code"><a href="#project-list">Code</a></div>
-
-        </section> -->
-
-
-
-        <!-- =======PROJECT lists======== -->
-
         <section id="projectList" class="projectList">
-            <h2 class="container">Code Projects</h2>
+            <h2 class="container dropShadow">Code </h2>
             <article id="project-list" class="project-list container">
+                <a href="#scrollToProject" id="wordpressTheme" class="dropShadow" data-project="wordpressTheme"
+                    data-type="hybrid">
+                    <h3>Wordpress Theme Development</h3>
+                </a>
+                <a href="#scrollToProject" id="popNow" class="dropShadow" data-project="pdx Pop Now"
+                    data-type="hybrid">
+                    <h3>Full Stack React App</h3>
+                </a>
+
                 <a href="#scrollToProject" id="barberstarrs" class="dropShadow" data-project="barberstarrs"
                     data-type="hybrid">
-                    <!-- <img src="images/bw/cocktails.jpg"> -->
                     <h3>Barberstarrs Website</h3>
                 </a>
-                <a href="#scrollToProject" id="popup" class="dropShadow" data-project="popup"
-                    data-type="code">
+                <a href="#scrollToProject" id="popup" class="dropShadow" data-project="popup" data-type="code">
                     <h3>Pop-up API</h3>
                 </a>
                 <a href="#scrollToProject" id="cocktail" class="dropShadow" data-project="Cocktail App"
@@ -301,13 +272,13 @@
                 </a>
 
             </article>
-            <h2 class=" container">Design Projects</h2>
+            <h2 class=" container">Design</h2>
 
             <article class="project-list container">
-                <a href="#scrollToProject" id="noBalance" class="dropShadow" data-project="No Balance"
+                <!-- <a href="#scrollToProject" id="noBalance" class="dropShadow" data-project="No Balance"
                     data-type="design">
                     <h3>Wordpress Site</h3>
-                </a>
+                </a> -->
                 <a href="#scrollToProject" id="h2" class="dropShadow" data-project="h2+" data-type="design">
                     <h3>Product Design</h3>
                 </a>
@@ -335,32 +306,44 @@
         <section id="about">
             <aside class="frameworks hideAbout">
                 <div>
-                    <img src="./images/images/frameworks/sized/css.png" />
+                    <img src="./images/images/frameworks/sized/css.png" alt=""/>
                 </div>
-                <div>
-                    <img src="./images/images/frameworks/sized/jquery.png" />
+                <!-- <div>
+                    <img src="./images/images/frameworks/sized/jquery.png" alt=""/>
 
-                </div>
+                </div> -->
                 <!-- <div>
                         <img src="./images/images/frameworks/sized/mongo.png"/>
                     </div> -->
                 <div>
-                    <img src="./images/images/frameworks/sized/react.png" />
+                    <img src="./images/images/frameworks/sized/react.png" alt=""/>
                 </div>
                 <div>
-                    <img src="./images/images/frameworks/sized/sql.png" />
+                    <img src="./images/images/frameworks/sized/sql.png" alt=""/>
                 </div>
                 <div>
-                    <img src="./images/images/frameworks/sized/node.png" />
+                    <img src="./images/images/frameworks/sized/node.png" alt=""/>
                 </div>
             </aside>
-            <div id="aboutWrap"  class="hideAbout">
+            <div id="aboutWrap" class="hideAbout">
                 <aside class="emoji">
-                    <img src="./images/images/emoji2.png">
+                    <img src="./images/images/emoji2.png" alt="">
                 </aside>
                 <aside class="aboutme">
                     <h2>A Little About Johnny Cruz</h2>
-                    <p>Woah... Thanks for showing interest my page. My names Johnny, and I'm a full stack developer with a passion for Design. About a year ago I was working on some graphic design projects as a freelancer and I realized that if I ever wanted to take my digital content to the next level I was going to have to learn to code in order to create web pages. I heard about online coding programs but I wanted something that was personable. During my research, I came across Alchemy Code lab which is a full stack Javasript program based out of Portland, OR.  Taking this course was the best decision I made all of 2018. I've spent my last 6 months (over 1000 hours) Learning Everything about JS. One thing I've realized is that the learning never stops and I will forever be a student. I enjoy learning new technologies and overall just leveling up my current skills. My goal is to create appealing and intuitive front end applications for the world to use. Besides trying to be tech savvy I enjoy playing video games(currently stuck on Fortnite), jamming out to music(currently learning to play guitar) and playing basketball(currently trying to play more like Dame Lillard). I'm glad to answer any of your tech questions, so please, ask away!
+                    <p>If you're reading this, I just want to say thank you for stopping by. My names Johnny, and I'm a full stack javascript(MERN) developer, with a a passion for Design. I recently graduated from Alchemy Code Lab in April of 2019 and was immediately chosen to be one of the few students to help out with building full stack React applications for real clients. These past 3 montsh have flown by and I've learned so much from being involved with a small group of developers. About a year ago I was working on some graphic design projects as a
+                        freelancer and I realized that if I ever wanted to take my digital content to the next level I
+                        was going to have to learn to code in order to create web pages. I heard about online coding
+                        programs but I wanted something that was personable. During my research, I came across Alchemy
+                        Code lab which is a full stack Javasript program based out of Portland, OR. Taking this course
+                        was the best decision I made all of 2018. In the span of 6 months I spent over 1000 hours learning 
+                        Everything about JS. One thing I've realized is that the learning never stops and I will forever
+                        be a student. I enjoy learning new technologies and overall just leveling up my current skills.
+                        My goal is to create appealing and intuitive front end applications for the world to use.
+                        Besides trying to be tech savvy I enjoy playing video games(currently stuck on Fortnite),
+                        jamming out to music(currently learning to play guitar) and playing basketball(currently trying
+                        to play more like Dame Lillard). I'm glad to answer any of your tech questions, so please, ask
+                        away!
                     </p>
                 </aside>
             </div>
@@ -443,16 +426,39 @@
 
                 <aside class="blogContent blogTemplate blog-details">
                     <h2 class="blogTitle">Node, A JS Blessing.</h2>
-                    <p class="notes">Before I started working with Node I was so Oblivious to the backend and how powerful it was. I didn't Even know what An API was exactly. I knew it stood for an Application Processing Interface, but I wasn't able to dive deep into the topic. Once I created my first backend Application I was awed by node and its magic. Node is a runtime environment which easily gets confused with a framework or library. Node Allows us Javascript developers to write backend code with Javascript. Before Node, Javascript was only limited to front end development, making Node a pretty big deal for several reasons. First off all, we can create a full stack application using only one language, so theres no need to take extra time to learn PHP, Python or Java. All you need to do is npm i Node with a couple other packages and you're on your way! Ok, there's a bit of a learning curve, but since you already know Javascript you will at least be familiar with some of the syntax. If you're new to node or the backend in general, here are some terms you'll come across in the backend world. <br/>
-                   
-                    <strong>HTTP</strong>-Short for Hyper Text Transfer Protocol. We can create/update  data on the client side through CRUD Methods including, GET, PUT, POST, DELETE and PATCH. <br/>
-                    <strong>Express</strong>-A popular Node JS framework which allows us to create a server and and set up our CRUD methods. <a class="underline" href="https://scotch.io/bar-talk/10-node-frameworks-to-use-in-2019">Here</a> are some similar frameworks with different features.<br/>
-                    <strong><a class="underline"  href="https://www.npmjs.com/">Node Package Manager(NPM)</a></strong>-An ecosystem full of scripts that developers can share. If you're trying to code a common functionality for an app which you've see across different applications, chances are you can find it though the <a class="underline" href="https://www.npmjs.com/">NPM website</a>.<br/>
-                    <strong>Module.exports</strong>-Allows us to organize our functions and easily inject them between other files.<br/>
-                    <strong>Middleware</strong>-Functions that run in between calls made outside of our application. Middleware can be used to debugging and checking for Connection errors. For example If we are trying to connect to our database we can throw an error function that logs that theres a problem with with connecting. 
-                </p>
+                    <p class="notes">Before I started working with Node I was so Oblivious to the backend and how
+                        powerful it was. I didn't Even know what An API was exactly. I knew it stood for an Application
+                        Processing Interface, but I wasn't able to dive deep into the topic. Once I created my first
+                        backend Application I was awed by node and its magic. Node is a runtime environment which easily
+                        gets confused with a framework or library. Node Allows us Javascript developers to write backend
+                        code with Javascript. Before Node, Javascript was only limited to front end development, making
+                        Node a pretty big deal for several reasons. First off all, we can create a full stack
+                        application using only one language, so theres no need to take extra time to learn PHP, Python
+                        or Java. All you need to do is npm i Node with a couple other packages and you're on your way!
+                        Ok, there's a bit of a learning curve, but since you already know Javascript you will at least
+                        be familiar with some of the syntax. If you're new to node or the backend in general, here are
+                        some terms you'll come across in the backend world. <br />
+
+                        <strong>HTTP</strong>-Short for Hyper Text Transfer Protocol. We can create/update data on the
+                        client side through CRUD Methods including, GET, PUT, POST, DELETE and PATCH. <br />
+                        <strong>Express</strong>-A popular Node JS framework which allows us to create a server and and
+                        set up our CRUD methods. <a class="underline"
+                            href="https://scotch.io/bar-talk/10-node-frameworks-to-use-in-2019">Here</a> are some
+                        similar frameworks with different features.<br />
+                        <strong><a class="underline" href="https://www.npmjs.com/">Node Package
+                                Manager(NPM)</a></strong>-An ecosystem full of scripts that developers can share. If
+                        you're trying to code a common functionality for an app which you've see across different
+                        applications, chances are you can find it though the <a class="underline"
+                            href="https://www.npmjs.com/">NPM website</a>.<br />
+                        <strong>Module.exports</strong>-Allows us to organize our functions and easily inject them
+                        between other files.<br />
+                        <strong>Middleware</strong>-Functions that run in between calls made outside of our application.
+                        Middleware can be used to debugging and checking for Connection errors. For example If we are
+                        trying to connect to our database we can throw an error function that logs that theres a problem
+                        with with connecting.
+                    </p>
                 </aside>
-                
+
                 <aside class="blogContent blogTemplate blog-details">
                     <h2 class="blogTitle">Light Intro to Backend Development</h2>
                     <p class="notes">Long story short Backend Development is working with databases and dealing with
@@ -547,16 +553,13 @@
                 </aside>
                 <aside class="blogContent blogTemplate blog-details">
                     <h2 class="blogTitle">Why Podcasts</h2>
-                    <p class="notes">Never did I think I would be a podcast listener but if you want to keep up with
-                        this fast paced industry where the learning never stops, you're going to have to divulge
-                        yourself with everything about coding. listening to podcasts over my gangster rap music has made
-                        me more fluent when it comes to talking code as well as given me ideas for my code. There will
-                        be many times where I got done learning a new subject such as Test Driven Development and I had
-                        no idea what the heck Just read, but then I run into a podcast on that subject which answers a
-                        lot of my questions. There was also another time that I was listening to a coding podcast and I
+                    <p class="notes">Never did I think I would be a podcast listener, but I needed a way to keep up
+                        this fast paced industry where the learning never stops and I needed a way to divulge myslef with code talk. listening to podcasts over my gangster rap music has made
+                        me more fluent when it comes to talking code as well as given me ideas for my code. There has
+                        been several times where I got done learning a new subject and which I was still hazy on, but then I ran into a podcast on that same subject which answered a
+                        my questions. There was one time that I was listening to a coding podcast and I
                         needed help with an ajax call. The TA went off into talking about promises which I was able to
-                        quickly catch on because the podcast (syntax) had mentioned the promise method on my drive to
-                        class. Here are a list of podcasts I listen to off of Spotify:
+                        quickly catch on because the podcast (syntax) had mentioned the promise method. Here are a list of podcasts I listen to off of Spotify:
                         <ol class="notes">
                             <li>Code Newbie</li>
                             <li>Sytax</li>
@@ -580,7 +583,8 @@
         </section>
 
     </main>
-    <footer>ATTN: If you are thinking about using any of my content please make sure to not hesitate! I only hope that my
+    <footer>ATTN: If you are thinking about using any of my content please make sure to not hesitate! I only hope that
+        my
         content takes your content to the next level! </footer>
 
 
@@ -590,7 +594,7 @@
 
 
 </body>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
 <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
@@ -609,9 +613,8 @@
 <script type="text/javascript" src="js/repoView.js"></script>
 <script type="text/javascript" src="js/githubController.js"></script>
 <script type="text/javascript" src="js/controllers/routes.js"></script> -->
-<script src="./js/scroll.js"> </script>
-<script>
+<script type="text/javascript" src="./js/scroll.js"> </script>
+<script type="text/javascript" src="./js/typer.js"> </script>
 
-</script>
 
 </html>

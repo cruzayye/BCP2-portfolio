@@ -44,10 +44,9 @@
 
 #about{
   // background-color: white;
-  background-image:
-    linear-gradient(
-      #2e0e31, black
-    );
+  background: linear-gradient(0deg, rgba(0,0,0,1) 24%, rgba(63,52,87,1) 64%, rgba(160,129,217,1) 100%);
+
+    
 }
 
 .hideAbout {

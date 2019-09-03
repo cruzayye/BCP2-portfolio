@@ -53,14 +53,12 @@ projectsArray.fetchAll = function() {
     }
     
     }
-    // console.log(projectsArray[1]);
   
 
   projectsArray.loadAll = function(rawData) {
     //USE THIS TO ADD A BR TAG FOR EACH CHALLENGE.
 
     const addLi = projectArray => {
-      console.log(projectArray);
       const mappedProject = projectArray.map(project => {
           
         const challenges = project.challenges.map(challenge => {
@@ -71,12 +69,10 @@ projectsArray.fetchAll = function() {
         return project;
          
        })
-       console.log(mappedProject);
        return mappedProject;
      }
 
     var formattedChallenges = addLi(rawData);
-    console.log(formattedChallenges);
 
     rawData.forEach(function(element) {
       projectsArray.push(new Project(element));
@@ -127,10 +123,8 @@ $("#btn2").click(function(){
 
 
 $(window).on('load', function(){
-  console.log('looaded');
   projectsArray.fetchAll();
-  // console.log(projectsArray.map(mapArray));
-  // console.log(projectLineBreak);
+
 
 
 
@@ -142,7 +136,6 @@ $(window).on('load', function(){
 
 
 
-// console.log(projectsArray.map(mapArray));
 
     //USE THIS TO ADD A BR TAG FOR EACH CHALLENGE.
     // const addBr = projectArray => {

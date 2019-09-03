@@ -1,15 +1,19 @@
 
 #projectList{
     background-color: black;
-    border-top: 1px solid white;
     padding-top: 5%;
     padding-bottom: 5%;
     
 }
 
-.dropShadow, #projectList h2{
+.dropShadow{
     opacity: 0;
     transition:1s;
+}
+
+h2.dropShadow  {
+    border: none;
+    box-shadow: none;
 }
 
 .show {
@@ -45,7 +49,7 @@ li, #content p{
 }
 
 .container:nth-of-type(2) {
-    margin-bottom: 2%;
+   text-align: right;
 }
 
 h2.container{
@@ -53,7 +57,6 @@ h2.container{
     padding-bottom: 0;
     padding-bottom: 5px;
     color: white;
-    text-align: center;
 }
 .row1 img{
     width: 75%;
@@ -141,6 +144,16 @@ h2.container{
             z-index: 0;
         }
          */
+        #popNow{
+            background-image: url("../images/bw/popNow.jpg");
+            background-size: cover;
+            background-position: center; 
+        }
+        #wordpressTheme{
+            background-image: url("../images/bw/wpTheme.jpg");
+            background-size: cover;
+            background-position: center; 
+        }
         #cocktail{
             background-image: url("../images/bw/cocktails.jpg");
             background-size: cover;
@@ -239,9 +252,10 @@ h2.container{
 
         .dropShadow h3 {
             // background:rgba(146, 143, 143, 0.7);
-            text-align:Center;
+            background: white;
+            // text-align:Center;
             padding: 1%;
-            position: relative;
+            // position: relative;
             opacity: 0;
 
         }

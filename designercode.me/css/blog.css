@@ -1,7 +1,8 @@
 #blogspot{
-  min-height: 100vh;
+  min-height: 90vh;
   border-top: 1px solid black;
-  background-image: url("../images//images/bg_small.png");
+  background-image: url(../images/images/darkBg.png);
+
   background-repeat: no-repeat;
   background-color: black;
   // background-size: cover;
@@ -82,7 +83,7 @@
     width: 75%;
   }
   #blogspot{
-    min-height: 100vh;
+    min-height: 90vh;
     background-image: url("../images/images/darkBgflipped.png");
     background-attachment: fixed;
     

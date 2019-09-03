@@ -1,7 +1,7 @@
 
 var controller = new ScrollMagic.Controller();
 new ScrollMagic.Scene({
-        triggerElement: '#projectList'    // the scene should last for a scroll distance of 100px
+        triggerElement: '#nav'    // the scene should last for a scroll distance of 100px
         // offset: 50    // start this scene after scrolling for 50px
     })
     .setClassToggle(".dropShadow", 'show') // pins the element for the the scene's duration
