@@ -1,0 +1,30 @@
+#contact {
+  height: 100vh;
+  background-color: black;
+}
+
+#contact h2 {
+  margin: 0;
+  text-align: center;
+  background: white;
+  padding: 5%;
+}
+
+#contact form {
+  display: grid;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+
+#contact input {
+  width: 40%;
+  height: 2em;
+}
+
+#contact textarea {
+  width: 80%;
+  height: 20em;
+}
+
+
