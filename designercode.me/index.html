@@ -353,14 +353,14 @@
         <!-- ====================CONTACT FORM ===================== -->
         <section id="contact">
             <h2>Say Whats up!</h2>
-            <form>
+            <form class="contact-form" action="contact.php" method="post">
                 <div class="input1">
-                    <input type="text" placeholder="name"/>
-                    <input type="text" placeholder="email"/>
+                    <input type="text" name="name" placeholder="name"/>
+                    <input type="text" name="email" placeholder="email"/>
                 </div>
                 <div class="input2">
-                    <textarea placeholder="Message"></textarea> <br>
-                    <button>submit</button>
+                    <textarea placeholder="Message" name="message"></textarea> <br>
+                    <button type="submit" name="submit">submit</button>
                 </div>
             </form>
 

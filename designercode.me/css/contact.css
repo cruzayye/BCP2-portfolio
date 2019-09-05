@@ -1,5 +1,6 @@
 #contact {
   height: 100vh;
+  width: 100vw;
   background-color: black;
 }
 
@@ -10,20 +11,21 @@
   padding: 5%;
 }
 
-#contact form {
+.contact-form {
   display: grid;
+  width: 100%;
   justify-content: center;
   margin-top: 5%;
 }
 
 
 #contact input {
-  width: 40%;
+  width: 40vw;
   height: 2em;
 }
 
 #contact textarea {
-  width: 80%;
+  width: 80vw;
   height: 20em;
 }
 
